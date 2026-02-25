@@ -180,10 +180,38 @@ def extract_response_text(response_json: dict) -> str:
     return f"[ERROR: could not extract text from response: {response_json}]"
 
 
+def get_session_id(user: str) -> str | None:
+    """Read the current session ID for the given user from sessions.json."""
+    sessions_file = os.path.expanduser("~/.openclaw/agents/main/sessions/sessions.json")
+    try:
+        with open(sessions_file, "r") as f:
+            data = json.load(f)
+        key = f"agent:main:openresponses-user:{user}"
+        return data.get(key, {}).get("sessionId")
+    except Exception as e:
+        print(f"    [reset] could not read session ID: {e}", file=sys.stderr)
+        return None
+
+
+def reset_session(session_id: str) -> None:
+    """Archive the session .jsonl file by renaming it with a timestamp suffix."""
+    sessions_dir = os.path.expanduser("~/.openclaw/agents/main/sessions")
+    src = os.path.join(sessions_dir, f"{session_id}.jsonl")
+    dst = f"{src}.{int(time.time())}"
+    try:
+        os.rename(src, dst)
+        print(f"    [reset] archived {session_id}.jsonl -> {os.path.basename(dst)}", file=sys.stderr)
+    except Exception as e:
+        print(f"    [reset] could not archive session file: {e}", file=sys.stderr)
+
+
 def send_message(
     base_url: str, token: str, user: str, message: str
-) -> str:
-    """Send a single message to the OpenClaw responses API and return the assistant's reply."""
+) -> tuple[str, dict]:
+    """Send a single message to the OpenClaw responses API.
+
+    Returns (reply_text, usage) where usage has input_tokens, output_tokens, total_tokens.
+    """
     url = f"{base_url}/v1/responses"
     headers = {
         "Content-Type": "application/json",
@@ -192,12 +220,16 @@ def send_message(
     payload = {
         "model": "openclaw",
         "input": message,
-        "user": user,
+        "stream": False,
     }
+    if user:
+        payload["user"] = user
 
     resp = requests.post(url, json=payload, headers=headers, timeout=300)
     resp.raise_for_status()
-    return extract_response_text(resp.json())
+    body = resp.json()
+    usage = body.get("usage", {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0})
+    return extract_response_text(body), usage
 
 
 # ---------------------------------------------------------------------------
@@ -215,13 +247,14 @@ def run_ingest(
 
         for item in samples:
             sample_id = item["sample_id"]
-            user_key = f"eval-{''.join(random.choices(string.ascii_lowercase + string.digits, k=8))}"
+            user_key = args.user or "eval-1"
             sessions = build_session_messages(item, session_range, tail=args.tail)
 
             print(f"\n=== Sample {sample_id} ===", file=sys.stderr)
             print(f"    user: {user_key}", file=sys.stderr)
             print(f"    {len(sessions)} session(s) to ingest", file=sys.stderr)
 
+            session_id = None
             for sess in sessions:
                 meta = sess["meta"]
                 msg = sess["message"]
@@ -231,13 +264,14 @@ def run_ingest(
                 print(f"  [{label}] {preview}...", file=sys.stderr)
 
                 try:
-                    reply = send_message(args.base_url, args.token, user_key, msg)
+                    reply, usage = send_message(args.base_url, args.token, user_key, msg)
                     print(f"    -> {reply[:80]}{'...' if len(reply) > 80 else ''}", file=sys.stderr)
                     results.append({
                         "sample_id": sample_id,
                         "session": meta["session_key"],
                         "user": user_key,
                         "reply": reply,
+                        "usage": usage,
                     })
                 except Exception as e:
                     print(f"    -> [ERROR] {e}", file=sys.stderr)
@@ -246,7 +280,13 @@ def run_ingest(
                         "session": meta["session_key"],
                         "user": user_key,
                         "reply": f"[ERROR] {e}",
+                        "usage": {},
                     })
+
+                if session_id is None:
+                    session_id = get_session_id(user_key)
+                if session_id:
+                    reset_session(session_id)
 
         if args.output:
             with open(args.output, "w", encoding="utf-8") as f:
@@ -267,14 +307,15 @@ def run_ingest(
 
         results = []
         for idx, session in enumerate(sessions, start=1):
-            session_key = f"eval-{''.join(random.choices(string.ascii_lowercase + string.digits, k=8))}"
+            session_key = args.user or "eval-1"
             print(f"--- Session {idx} (user={session_key}) ---", file=sys.stderr)
 
+            session_id = None
             turns = []
             for msg in session["messages"]:
                 print(f"  [user] {msg}", file=sys.stderr)
                 try:
-                    reply = send_message(args.base_url, args.token, session_key, msg)
+                    reply, _usage = send_message(args.base_url, args.token, session_key, msg)
                     print(f"  [assistant] {reply[:80]}{'...' if len(reply) > 80 else ''}", file=sys.stderr)
                     turns.append(("user", msg))
                     turns.append(("assistant", reply))
@@ -283,6 +324,11 @@ def run_ingest(
                     turns.append(("user", msg))
                     turns.append(("error", str(e)))
                     break
+
+            if session_id is None:
+                session_id = get_session_id(session_key)
+            if session_id:
+                reset_session(session_id)
 
             results.append({"index": idx, "turns": turns, "evals": session["evals"]})
 
@@ -314,10 +360,12 @@ def run_qa(
         sys.exit(1)
 
     samples = load_locomo_data(args.input, args.sample)
-    user_key = args.user or f"eval-{''.join(random.choices(string.ascii_lowercase + string.digits, k=8))}"
+    user_key = args.user or "eval-1"
     print(f"    user: {user_key}", file=sys.stderr)
 
     all_results = []
+    session_id = None
+    total_usage = {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
 
     for item in samples:
         sample_id = item["sample_id"]
@@ -337,11 +385,20 @@ def run_qa(
             print(f"  Q{qi}/{len(qas)}: {question[:60]}{'...' if len(question) > 60 else ''}", file=sys.stderr)
 
             try:
-                response = send_message(args.base_url, args.token, user_key, question)
+                response, usage = send_message(args.base_url, args.token, user_key, question)
                 print(f"    A: {response[:60]}{'...' if len(response) > 60 else ''}", file=sys.stderr)
+                print(f"    tokens: in={usage.get('input_tokens',0)} out={usage.get('output_tokens',0)} total={usage.get('total_tokens',0)}", file=sys.stderr)
+                for k in total_usage:
+                    total_usage[k] += usage.get(k, 0)
             except Exception as e:
                 response = f"[ERROR] {e}"
+                usage = {}
                 print(f"    A: {response}", file=sys.stderr)
+
+            if session_id is None:
+                session_id = get_session_id(user_key)
+            if session_id:
+                reset_session(session_id)
 
             all_results.append({
                 "sample_id": sample_id,
@@ -351,23 +408,32 @@ def run_qa(
                 "response": response,
                 "category": category,
                 "evidence": evidence,
+                "usage": usage,
             })
+
+    print(f"\n    total tokens: in={total_usage['input_tokens']} out={total_usage['output_tokens']} total={total_usage['total_tokens']}", file=sys.stderr)
 
     # Write output
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
             for r in all_results:
+                u = r.get("usage", {})
                 f.write(f"=== [{r['sample_id']}] Q{r['qi']} Category {r['category']} ===\n")
                 f.write(f"[question] {r['question']}\n")
                 f.write(f"[expected] {r['expected']}\n")
                 f.write(f"[response] {r['response']}\n")
                 f.write(f"[evidence] {', '.join(r['evidence'])}\n")
+                f.write(f"[tokens] in={u.get('input_tokens',0)} out={u.get('output_tokens',0)} total={u.get('total_tokens',0)}\n")
                 f.write("\n")
+            f.write(f"=== TOTAL USAGE ===\n")
+            f.write(f"input_tokens: {total_usage['input_tokens']}\n")
+            f.write(f"output_tokens: {total_usage['output_tokens']}\n")
+            f.write(f"total_tokens: {total_usage['total_tokens']}\n")
         print(f"QA results written to {args.output}", file=sys.stderr)
 
         json_path = args.output + ".json"
         with open(json_path, "w", encoding="utf-8") as f:
-            json.dump(all_results, f, indent=2, ensure_ascii=False)
+            json.dump({"results": all_results, "total_usage": total_usage}, f, indent=2, ensure_ascii=False)
         print(f"QA results (JSON) written to {json_path}", file=sys.stderr)
     else:
         print("\nDone (no output file requested).", file=sys.stderr)
