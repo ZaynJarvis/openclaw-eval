@@ -10,6 +10,10 @@ uv run eval.py ./locomo10_small.json --output output/trial.txt --tail "[try to r
 uv run eval.py qa ./locomo10_small.json --output output/answers.txt --count 10
 export OPENAI_API_KEY=sk-proj-Bc..
 uv run judge.py output/answers.txt.json
+uv run judge.py output/answers.txt.json \
+      --base-url https://ark.cn-beijing.volces.com/api/v3 \
+      --token 024341c1-... \
+      --model doubao-seed-2-0-pro-260215
 ```
 
 ## Dataset: LoCoMo10

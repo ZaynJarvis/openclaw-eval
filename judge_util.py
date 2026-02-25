@@ -4,18 +4,10 @@ import os
 
 from dotenv import load_dotenv
 from openai import AsyncOpenAI
-from pydantic import BaseModel, Field
-
-
-class Grade(BaseModel):
-    is_correct: str = Field(description="CORRECT or WRONG")
-    reasoning: str = Field(
-        description="Explain why the answer is correct or incorrect."
-    )
 
 
 async def locomo_grader(
-    llm_client, question: str, gold_answer: str, response: str
+    llm_client, model: str, question: str, gold_answer: str, response: str
 ) -> bool:
     system_prompt = """
         You are an expert grader that determines if answers to questions match a gold standard answer
@@ -44,21 +36,23 @@ async def locomo_grader(
     First, provide a short (one sentence) explanation of your reasoning, then finish with CORRECT or WRONG.
     Do NOT include both CORRECT and WRONG in your response, or it will break the evaluation script.
 
-    Just return the label CORRECT or WRONG in a json format with the key as "label".
+    Respond with JSON only: {{"is_correct": "CORRECT" or "WRONG", "reasoning": "your explanation"}}
     """
 
-    resp = await llm_client.beta.chat.completions.parse(
-        model="gpt-4o-mini",
+    resp = await llm_client.chat.completions.create(
+        model=model,
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": ACCURACY_PROMPT},
         ],
-        response_format=Grade,
+        # response_format={"type": "json_object"},
         temperature=0,
     )
-    result = resp.choices[0].message.parsed
+    content = resp.choices[0].message.content
+    result = json.loads(content)
 
-    return result.is_correct.strip().lower() == "correct"
+    label = result.get("is_correct", result.get("label", "WRONG"))
+    return label.strip().lower() == "correct"
 
 
 def load_answers(path: str) -> list[dict]:
@@ -71,19 +65,28 @@ def load_answers(path: str) -> list[dict]:
         return json.load(f)
 
 
-async def grade_answers(answers: list[dict]) -> list[dict]:
+async def grade_answers(
+    answers: list[dict],
+    base_url: str | None = None,
+    api_key: str | None = None,
+    model: str = "gpt-4o-mini",
+) -> list[dict]:
     """Grade a list of answer dicts using the LLM grader.
 
     Each answer dict must have: question, expected, response.
     Returns a new list with a 'grade' field added (bool).
     """
     load_dotenv()
-    client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    client = AsyncOpenAI(
+        base_url=base_url or os.getenv("OPENAI_BASE_URL"),
+        api_key=api_key or os.getenv("OPENAI_API_KEY"),
+    )
 
     tasks = []
     for item in answers:
         task = locomo_grader(
             client,
+            model,
             item["question"],
             item["expected"],
             item["response"],
