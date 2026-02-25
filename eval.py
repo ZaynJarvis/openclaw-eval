@@ -21,7 +21,8 @@ import json
 import os
 import sys
 import time
-import uuid
+import random
+import string
 
 import requests
 
@@ -194,7 +195,7 @@ def send_message(
         "user": user,
     }
 
-    resp = requests.post(url, json=payload, headers=headers, timeout=120)
+    resp = requests.post(url, json=payload, headers=headers, timeout=300)
     resp.raise_for_status()
     return extract_response_text(resp.json())
 
@@ -214,7 +215,7 @@ def run_ingest(
 
         for item in samples:
             sample_id = item["sample_id"]
-            user_key = str(uuid.uuid4())
+            user_key = f"eval-{''.join(random.choices(string.ascii_lowercase + string.digits, k=8))}"
             sessions = build_session_messages(item, session_range, tail=args.tail)
 
             print(f"\n=== Sample {sample_id} ===", file=sys.stderr)
@@ -261,7 +262,7 @@ def run_ingest(
 
         results = []
         for idx, session in enumerate(sessions, start=1):
-            session_key = str(uuid.uuid4())
+            session_key = f"eval-{''.join(random.choices(string.ascii_lowercase + string.digits, k=8))}"
             print(f"--- Session {idx} (user={session_key}) ---", file=sys.stderr)
 
             turns = []
@@ -308,7 +309,7 @@ def run_qa(
         sys.exit(1)
 
     samples = load_locomo_data(args.input, args.sample)
-    user_key = args.user or str(uuid.uuid4())
+    user_key = args.user or f"eval-{''.join(random.choices(string.ascii_lowercase + string.digits, k=8))}"
     print(f"    user: {user_key}", file=sys.stderr)
 
     all_results = []
