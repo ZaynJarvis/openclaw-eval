@@ -6,8 +6,10 @@ Evaluate OpenClaw responses using multi-round conversations from txt files or [L
 
 ```bash
 uv sync
-uv run eval.py ./locomo10_small.json --output output/trial.txt --tail "[what's your insight in 20 words]"
-uv run eval.py qa ../locomo10_small.json --output output/answers.txt --count 10
+uv run eval.py ./locomo10_small.json --output output/trial.txt --tail "[try to remember what's said in the group]"
+uv run eval.py qa ./locomo10_small.json --output output/answers.txt --count 10
+export OPENAI_API_KEY=sk-proj-Bc..
+uv run judge.py output/answers.txt.json
 ```
 
 ## Dataset: LoCoMo10
@@ -47,10 +49,10 @@ Sends conversation sessions to openclaw to build up memory/context. All sessions
 
 ```bash
 # Ingest specific sample, sessions 1-4
-uv run python eval.py ingest ../locomo10.json --sample 0 --sessions 1-4
+uv run python eval.py ingest ./locomo10.json --sample 0 --sessions 1-4
 
 # Ingest with output log
-uv run python eval.py ingest ../locomo10.json --sample 0 --sessions 1-4 --output ingest.txt
+uv run python eval.py ingest ./locomo10.json --sample 0 --sessions 1-4 --output ingest.txt
 
 # Original txt mode
 uv run python eval.py ingest example.txt --output output.txt
@@ -85,10 +87,10 @@ Sends QA questions to openclaw and records responses alongside expected answers.
 
 ```bash
 # Run all QAs for sample 0 using user from ingest
-uv run python eval.py qa ../locomo10.json --sample 0 --user f5d94f68-... --output qa_results.txt
+uv run python eval.py qa ./locomo10.json --sample 0 --user f5d94f68-... --output qa_results.txt
 
 # Run first 10 QAs only
-uv run python eval.py qa ../locomo10.json --sample 0 --user f5d94f68-... --count 10 --output qa_results.txt
+uv run python eval.py qa ./locomo10.json --sample 0 --user f5d94f68-... --count 10 --output qa_results.txt
 ```
 
 Output format:
@@ -105,10 +107,10 @@ Output format:
 
 ```bash
 # Step 1: ingest conversations (note the user UUID printed)
-uv run python eval.py ingest ../locomo10.json --sample 0 --sessions 1-4
+uv run python eval.py ingest ./locomo10.json --sample 0 --sessions 1-4
 
 # Step 2: run QA using that user UUID
-uv run python eval.py qa ../locomo10.json --sample 0 --user <UUID> --output qa_results.txt
+uv run python eval.py qa ./locomo10.json --sample 0 --user <UUID> --output qa_results.txt
 ```
 
 ## CLI Options
