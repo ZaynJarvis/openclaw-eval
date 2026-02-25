@@ -253,7 +253,12 @@ def run_ingest(
                 for r in results:
                     f.write(f"[{r['sample_id']}/{r['session']}] user={r['user']}\n")
                     f.write(f"  {r['reply']}\n\n")
-            print(f"\nResults written to {args.output}", file=sys.stderr)
+            print(f"Results written to {args.output}", file=sys.stderr)
+
+            json_path = args.output + ".json"
+            with open(json_path, "w", encoding="utf-8") as f:
+                json.dump(results, f, indent=2, ensure_ascii=False)
+            print(f"Results (JSON) written to {json_path}", file=sys.stderr)
 
     else:
         # Original txt mode
@@ -358,7 +363,12 @@ def run_qa(
                 f.write(f"[response] {r['response']}\n")
                 f.write(f"[evidence] {', '.join(r['evidence'])}\n")
                 f.write("\n")
-        print(f"\nQA results written to {args.output}", file=sys.stderr)
+        print(f"QA results written to {args.output}", file=sys.stderr)
+
+        json_path = args.output + ".json"
+        with open(json_path, "w", encoding="utf-8") as f:
+            json.dump(all_results, f, indent=2, ensure_ascii=False)
+        print(f"QA results (JSON) written to {json_path}", file=sys.stderr)
     else:
         print("\nDone (no output file requested).", file=sys.stderr)
 

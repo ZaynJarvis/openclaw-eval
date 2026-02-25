@@ -2,10 +2,12 @@
 
 Evaluate OpenClaw responses using multi-round conversations from txt files or [LoCoMo](https://github.com/snap-research/locomo) JSON datasets.
 
-## Setup
+## Run
 
 ```bash
 uv sync
+uv run eval.py ./locomo10_small.json --output trial.txt --tail "[what's your insight in 20 words]"
+uv run eval.py qa ../locomo10_small.json --output answers.txt --count 10
 ```
 
 ## Dataset: LoCoMo10
