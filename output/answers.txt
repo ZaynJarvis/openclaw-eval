@@ -1,54 +1,1043 @@
 === [conv-26] Q1 Category 5 ===
 [question] What did Caroline realize after her charity race?
 [expected] self-care is important
-[response] I assume you're referring to Caroline Bridge, winner of the celebrity charity edition of BBC's *Race Across the World* (where the prize money goes to charity):
+[response] I can't find a widely documented incident of a Caroline having a specific public realization after a charity race from my current search results. 
 
-After completing the race, she shared these key realizations:
-1. She was no longer scared of being lonely
-2. She re-found her sense of purpose and personal identity, after spending 21 years of her life focused entirely on her family and feeling like she had lost parts of herself
-3. She learned to be more carefree and adventurous, and planned to keep exploring new places and experiences going forward
-
-If you're asking about a different Caroline, please share a bit more context (like which story/show/event the charity race is from) and I can help find the answer you're looking for!
+Could you share a bit more context? For example:
+- Is this from a book, TV show, movie, or viral social media story?
+- Do you know any more details about Caroline (last name, location, what the charity race was supporting)?
+- Is this referencing a specific recent event or fictional plot point?
 [evidence] D2:3
+[tokens] in=55213 out=2731 total=26448
 
 === [conv-26] Q2 Category 2 ===
 [question] When did Caroline go to the LGBTQ support group?
 [expected] 7 May 2023
-[response] The information I have doesn't include a specific date for when Caroline attended an LGBTQ support group as part of her own personal journey, though she has mentioned that support from these groups made a huge difference in her life.
+[response] Based on your memory logs:
+Caroline attended the LGBTQ+ support group on **June 17, 2026** (she mentioned it during a conversation on June 18, 2026, referring to the event as happening "yesterday").
 
-She did attend an LGBTQ+ counseling workshop **last Friday, February 21, 2026** (relative to February 26, 2026) as part of her work toward a career in mental health counseling for trans people.
+She shared that she was inspired by transgender stories shared at the group, and felt more accepted and courageous to embrace herself after attending.
 [evidence] D1:3
+[tokens] in=11305 out=806 total=14398
 
 === [conv-26] Q3 Category 2 ===
 [question] When did Melanie paint a sunrise?
 [expected] 2022
-[response] There is no widely documented public record of a well-known public figure named Melanie creating a famous sunrise painting. Based on available information:
-1. The only Melanie-related sunrise reference in results is a **fan-made (non-canon, unofficial)** entry for singer Melanie Martinez, referencing a fictional track called *Lunar Sunrise* from a hypothetical 2028 album (this is fan fiction, not real).
-2. Folk singer Melanie Safka released an album titled *Sunset and Other Beginnings* in 1975, but this is a music release, not a painting.
-3. The iconic *Impression, Sunrise* painting was created by Claude Monet, first exhibited in April 1874.
+[response] There isn't a widely famous, canonical sunrise painting by a well-known artist named Melanie in mainstream art history (the most famous sunrise painting is *Impression, Sunrise* by Claude Monet, painted 1872, exhibited 1874).
 
-If you are referring to a specific private individual or lesser-known creator named Melanie, more context would be needed to answer your question.
+If you're referring to a specific Melanie:
+- Contemporary artist **Melanie Parke** painted *Sunrise Bouquet* in 2018
+- If you mean singer Melanie Martinez, "Lunar Sunrise" is a fanmade/unofficial (fanon) track from an unreleased 2028 album, not a painting
+- Folk singer Melanie Safka released a *Sunset and Other Beginnings* album in 1975, no associated sunrise painting.
+
+If you have a last name or more context for the Melanie you're asking about, I can look further!
 [evidence] D1:12
+[tokens] in=32589 out=1236 total=17681
 
 === [conv-26] Q4 Category 3 ===
 [question] What fields would Caroline be likely to pursue in her educaton?
 [expected] Psychology, counseling certification
-[response] I don't have any context about who Caroline is, her interests, strengths, passions, or career goals yet! To give you a useful answer, could you share a bit more about her: what she enjoys doing, her strong subjects in school, what kind of work she finds interesting, or any long-term goals she's mentioned?
+[response] I don't have any context about who Caroline is, her interests, background, or personal goals right now! To figure out what fields she might pursue in her education, could you share more details about her: what she enjoys, her strengths, any career or personal interests she's mentioned, or her background?
 [evidence] D1:9, D1:11
+[tokens] in=9665 out=374 total=13935
 
 === [conv-26] Q5 Category 1 ===
 [question] What did Caroline research?
 [expected] Adoption agencies
-[response] Assuming you're referring to **Caroline Lucretia Herschel** (the most prominent historical Caroline in research contexts):
-
-She was a pioneering 18th/19th century astronomer, whose core research and contributions included:
-1.  Discovering 8 comets (she was the first woman to officially discover a comet, including the periodic comet 35P/Herschel–Rigollet named for her)
-2.  Cataloging thousands of stars and nebulae, including compiling an extensive index of star observations
-3.  Developing and refining astronomical calculation methods for observational data
-4.  Advancing telescope manufacturing (she ground and polished telescope mirrors alongside her brother William Herschel, the discoverer of Uranus)
-
-She was also the first salaried female astronomer in history.
-
-If you're referring to a different Caroline, feel free to share more context!
+[response] Caroline researched:
+1. **Inclusive adoption agencies that support LGBTQ+ adoption**: She selected one, as she wants to provide a loving home to kids in need as a single parent and is preparing to start the adoption process.
+2. **Counseling/mental health careers**: She's exploring this field to support people with similar LGBTQ+ experiences, after attending an LGBTQ+ support group where she was inspired by shared transgender stories.
 [evidence] D2:8
+[tokens] in=10929 out=974 total=14415
 
+=== [conv-26] Q6 Category 1 ===
+[question] What is Caroline's identity?
+[expected] Transgender woman
+[response] From the saved conversation records:
+Caroline is part of your social circle:
+- She identifies as part of the LGBTQ+ community, recently felt more accepted and confident to embrace herself after attending an LGBTQ+ support group where she was inspired by shared transgender stories
+- She's researching adoption agencies that support LGBTQ+ adoption, aiming to become a single parent and provide a loving home to kids in need, and is optimistic about starting the adoption process soon
+- She's currently continuing her education and exploring a career in counseling/mental health to support other people with similar experiences to her own.
+[evidence] D1:5
+[tokens] in=24506 out=890 total=14700
+
+=== [conv-26] Q7 Category 2 ===
+[question] When did Melanie run a charity race?
+[expected] The sunday before 25 May 2023
+[response] I don't have enough context to give an exact answer - there are multiple public figures named Melanie, and the search results don't specify a clear match for a Melanie running a charity race.
+
+Could you share more details, like her full name, what type of charity race it was, or any other relevant context? That will help me find the exact information you're looking for.
+[evidence] D2:1
+[tokens] in=17022 out=1201 total=17648
+
+=== [conv-26] Q8 Category 2 ===
+[question] When is Melanie planning on going camping?
+[expected] June 2023
+[response] Based on the June 18, 2026 group chat notes, Melanie and her kids are planning a camping trip in **July 2026** (the month after the note was written). No exact specific date is listed in the available records.
+[evidence] D2:7
+[tokens] in=25079 out=1503 total=15730
+
+=== [conv-26] Q9 Category 1 ===
+[question] What is Caroline's relationship status?
+[expected] Single
+[response] I don't have any information about who Caroline is, nor do I have access to personal private details like someone's relationship status. If you can share more context about who Caroline is, I can help with relevant questions if it's appropriate and publicly/voluntarily shared information.
+[evidence] D3:13, D2:14
+[tokens] in=13555 out=460 total=14015
+
+=== [conv-26] Q10 Category 2 ===
+[question] When did Caroline give a speech at a school?
+[expected] The week before 9 June 2023
+[response] Could you clarify which Caroline you're asking about? The name is very common, and the search results include references to fictional characters (like Caroline Forbes from *The Vampire Diaries*), public figures (Caroline Cruz, Karoline Leavitt), and others, none of which clearly reference a specific school speech.
+
+If you can share her full name, or any additional context (whether she's a public figure, local person, fictional character, etc.), I can find the exact information for you.
+[evidence] D3:1
+[tokens] in=23279 out=805 total=15866
+
+=== [conv-30] Q1 Category 2 ===
+[question] When Jon has lost his job as a banker?
+[expected] 19 January, 2023
+[response] If you're referring to public figures named Jon who left banking roles:
+### Jon Watkinson
+He quit his high-paying banking job at **age 27 (~2011, based on a 2015 profile that noted he was 31 at the time of publishing)** to become a farmer, as he felt unfulfilled by day-to-day banking duties.
+
+If you are asking about a different Jon (real person or fictional character), feel free to share more context and I can look up more specific details.
+[evidence] D1:2
+[tokens] in=15315 out=2002 total=16850
+
+=== [conv-30] Q2 Category 2 ===
+[question] When Gina has lost her job at Door Dash?
+[expected] January, 2023
+[response] There is no widely publicized incident of someone named Gina losing her job at DoorDash.
+
+If you are referring to the viral 2025 DoorDash driver who was deactivated after making sexual assault claims against a customer, that person is **Livie Rose Henderson** (sometimes referenced as Olivia Henderson, not Gina):
+- She announced her DoorDash account deactivation in TikTok posts shared between **October 14 and 16, 2025**, stating she was fired two days after reporting the incident.
+
+There is a former DoorDash corporate employee named Gina Balestrieri who left the company after 8 years of employment, but no public date or confirmation that she was fired (rather than leaving voluntarily) is available.
+[evidence] D1:3
+[tokens] in=25288 out=2240 total=24890
+
+=== [conv-30] Q3 Category 4 ===
+[question] How do Jon and Gina both like to destress?
+[expected] by dancing
+[response] Assuming you're referring to Jon and Gina Brunson (hosts of the outdoor lifestyle show *Addicted to the Outdoors*):
+
+When they need to destress from running three businesses and raising their six kids, both of them love to escape to the woods or waterways — spending time hunting, fishing, or just being out in nature. They often bring their kids along for these outdoor activities too.
+[evidence] D1:7, D1:6
+[tokens] in=16719 out=1035 total=17524
+
+=== [conv-30] Q4 Category 1 ===
+[question] What do Jon and Gina both have in common?
+[expected] They lost their jobs and decided to start their own businesses.
+[response] Assuming you're referring to Jon and Gina Brunson (the most well-known public pair with those names):
+
+They are a married couple who co-host the award-winning outdoor lifestyle TV series **Addicted to the Outdoors** on the Outdoor Channel. Their shared traits include:
+1. A deep passion for outdoor adventures (hunting, fishing, exploring wild areas across North America)
+2. They've co-hosted their TV show together for over 18 years, with their children also appearing as co-hosts in recent seasons
+3. They balance their TV production work together while raising their six kids
+4. They both partner with outdoor industry brands (like FORLOH, Campbell Girls Deer Sauce, Armadillo Safes) as part of their work.
+[evidence] D1:2, D1:3, D1:4, D2:1
+[tokens] in=26170 out=1207 total=16397
+
+=== [conv-30] Q5 Category 4 ===
+[question] Why did Jon decide to start his dance studio?
+[expected] He lost his job and decided to start his own business to share his passion.
+[response] Assuming you're referring to one of the most prominent public figures named Jon who founded a dance studio/company:
+
+### For Jon Lehrer (founder of Jon Lehrer Dance Company, established 2007):
+After working for 10 years at Giordano Jazz Dance Chicago (rising from dancer to Rehearsal Director, then Associate Director, and becoming the company's resident choreographer with original works that earned global critical acclaim), he launched his own studio/company to showcase his unique, distinct choreographic style. He also aimed to create work that balances artistic integrity and accessibility, so it could be enjoyed by both seasoned dance experts and casual audiences alike.
+
+### For Jon Arpino (co-founder of CLI Studios):
+His core motivation was to democratize high-quality dance education: he wanted to bring world-class dance instruction and experiences to dancers all around the world, regardless of their geographic location or ability to travel to major professional dance hubs.
+
+If you're asking about a different Jon, feel free to share more context!
+[evidence] D1:2, D1:4
+[tokens] in=49834 out=2404 total=20928
+
+=== [conv-30] Q6 Category 1 ===
+[question] What Jon thinks the ideal dance studio should look like?
+[expected] By the water, with natural light and Marley flooring
+[response] I couldn't find any publicly shared, specific views from a well-known Jon in the dance industry about what he thinks an ideal dance studio should look like.
+
+Could you share a bit more context about who this Jon is? For example:
+- His last name, or what he's known for (e.g., choreographer, studio owner, content creator, public figure)
+- If he's a personal connection, or someone you follow in the dance space
+
+If you're also interested in general industry-standard ideal dance studio features (from design to functionality), I can share those for you as well.
+[evidence] D1:20, D2:4, D2:8
+[tokens] in=23860 out=2549 total=21449
+
+=== [conv-30] Q7 Category 2 ===
+[question] When is Jon's group performing at a festival?
+[expected] February, 2023
+[response] There are multiple artists named Jon with active festival/tour schedules, so I need a bit more clarity to give you the right info:
+- Which Jon are you referring to? (e.g. Lil Jon, Jon Anderson, Jon Pardi, etc.)
+- What's the name of his group/band?
+
+Once you share that I can pull up their exact festival performance dates.
+[evidence] D1:24
+[tokens] in=16773 out=871 total=16944
+
+=== [conv-30] Q8 Category 2 ===
+[question] When did Gina launch an ad campaign for her store?
+[expected] 29 January, 2023
+[response] I don't have enough context to find the exact answer right now—"Gina" is a very common name, and there are no public details matching a generic "Gina's store ad campaign" in search results.
+
+Could you share a bit more information? For example:
+- Gina's full name
+- The name of her store, or what it sells
+- Any location/region context for the store or campaign
+- If this is referencing a public figure, show character, or local business?
+[evidence] D2:1
+[tokens] in=19284 out=1309 total=17403
+
+=== [conv-30] Q9 Category 2 ===
+[question] When was Jon in Paris?
+[expected] 28 January 2023
+[response] To answer that, I'll need a bit more context: which "Jon" are you asking about? The search results don't show a well-known public figure named Jon (first name) with a widely documented trip to Paris, so if this is a specific person you're referring to (e.g. a celebrity, friend, historical figure), let me know their full name or more details.
+
+The closest relevant results:
+- Revolutionary War naval officer John Paul Jones (sometimes informally called Jon) lived in Paris from 1780 until his death there on July 18, 1792
+- There is a blues-rock musician whose full name is *Jon Paris* (Paris is his last name, not the location he visited)
+[evidence] D2:4
+[tokens] in=13916 out=947 total=17248
+
+=== [conv-30] Q10 Category 1 ===
+[question] Which city have both Jean and John visited?
+[expected] Rome
+[response] I don't have enough context about which specific Jean and John you're referring to. Could you clarify who they are? For example:
+- Are they people you know?
+- Characters from a book, show, or movie?
+- Historical figures?
+
+Once you give more details, I can help you find the answer.
+[evidence] D2:5, D15:1
+[tokens] in=10969 out=705 total=15697
+
+=== [conv-41] Q1 Category 2 ===
+[question] Who did Maria have dinner with on May 3, 2023?
+[expected] her mother
+[response] I don't have enough context to answer this: "Maria" is a very common name, and there's no information about which specific Maria you're referring to (e.g. a public figure, someone you know personally, a character from media, etc.).
+
+Could you clarify:
+1. Who is this Maria (full name, or context like what she's known for)?
+2. Is this a public event/figure that would be documented online?
+
+Once you provide that context I can help look up the details.
+[evidence] D13:16
+[tokens] in=3994 out=1411 total=17497
+
+=== [conv-41] Q2 Category 2 ===
+[question] When did Maria donate her car?
+[expected] 21 December 2022
+[response] I can't find specific public information about when a person named Maria donated her car, because "Maria" is an extremely common given name and there's no additional context provided (like her full name, the region she lives in, or the organization she donated to) to narrow down the specific person or event you're asking about.
+
+All the public results related to Maria and cars reference people named Maria *receiving donations* for car costs, having their cars totaled, or winning cars, not donating their own vehicles. If you can share more context about which Maria you're referring to, I can help you look further!
+[evidence] D2:1
+[tokens] in=24801 out=954 total=17462
+
+=== [conv-41] Q3 Category 1 ===
+[question] What martial arts has John done?
+[expected] Kickboxing, Taekwondo
+[response] It looks like there are several well-known public figures named John/Jon with martial arts backgrounds — could you clarify which one you're asking about?
+
+### Common matches from search results:
+1. **Jon Jones (UFC fighter)**: Professional mixed martial artist, with training across wrestling, kickboxing, Brazilian Jiu-Jitsu, boxing, and Muay Thai (competed in the UFC Light Heavyweight and Heavyweight divisions).
+2. **John Saxon (actor)**: Trained in martial arts starting in 1957, and starred as martial artist Roper alongside Bruce Lee in *Enter the Dragon*.
+3. **John Wick (fictional character, portrayed by Keanu Reeves)**: For the films, Keanu trained in modern wushu, Brazilian Jiu-Jitsu, Judo, Krav Maga, and tactical firearms.
+
+If you're referring to a different John, feel free to share more context!
+[evidence] D2:28, D1:4
+[tokens] in=12990 out=1778 total=16428
+
+=== [conv-41] Q4 Category 1 ===
+[question] What type of volunteering have John and Maria both done?
+[expected] Volunteering at a homeless shelter
+[response] I don't have enough context to identify which specific John and Maria you're referring to (these are very common names). Could you share more details about them, such as their full names, any relevant background (e.g. public figures, people from a specific event/organization, or context from a prior conversation), so I can look up the correct information?
+[evidence] D3:5, D2:1
+[tokens] in=23097 out=934 total=15770
+
+=== [conv-41] Q5 Category 2 ===
+[question] When did John join the online support group?
+[expected] The week before 1 January 2023
+[response] I don't have enough context to answer that right now. "John" is a very common name, and there are many different online support groups. Could you share more details:
+1. Which specific John are you asking about? (e.g. John from a particular story/show, public figure, person you know)
+2. What is the name or context of the online support group?
+
+With that info I can find the exact join date for you.
+[evidence] D3:1
+[tokens] in=18068 out=1124 total=16154
+
+=== [conv-41] Q6 Category 2 ===
+[question] When did Maria go to the beach?
+[expected] December 2022
+[response] I don't have any record of when Maria went to the beach in my memory files or past conversation logs. Could you share more context, like when this was mentioned or any additional details that might help me find the answer?
+[evidence] D3:15
+[tokens] in=27485 out=2096 total=16019
+
+=== [conv-41] Q7 Category 1 ===
+[question] Where has Maria made friends?
+[expected] homeless shelter, gym, church
+[response] It depends on which Maria you're referring to, these are the most common results from public references:
+1. **Maria (from *The Bachelor* franchise)**: Made a small group of good friends inside the Bachelor contestant house, with other cast members during filming.
+2. **Maria Robotnik (Sonic the Hedgehog)**: Her only close friend (Shadow the Hedgehog) was made on the *ARK*, the space colony where she lived.
+3. **Maria (minor character from *Friends* TV show)**: The recurring gym employee character is friendly with the core *Friends* main cast (Ross, Chandler, etc.) at their local gym.
+4. **Maria Renard (Castlevania)**: Makes close platonic friends with Richter Belmont and Alucard in the medieval Wallachia setting of the series.
+5. **Maria (from *A Silent Voice / Koe No Katachi*)**: Makes new friends after moving and starting at her new school.
+
+If you're referring to a specific Maria, let me know more context and I can find the exact answer!
+[evidence] D4:1, D2:1, D19:1, D14:10
+[tokens] in=2520 out=1747 total=16427
+
+=== [conv-41] Q8 Category 1 ===
+[question] What items des John mention having as a child?
+[expected] A doll, a film camera
+[response] If you're referring to **John the Savage from *Brave New World***, the items he had as a child are:
+1. Basic reading materials: His mother Linda taught him to read from a young age.
+2. A full copy of *The Complete Works of William Shakespeare*: He received this as a 12th birthday gift, read the entire volume repeatedly, and even used lines from Shakespeare as inspiration for his actions.
+3. A knife: He tried to use it to kill a man named Pope (who was involved with his mother) after catching them together, though the attempt failed.
+
+If you're asking about a different John (fictional character, public figure, etc.), please share more context so I can give you the exact answer you need.
+[evidence] D5:13, D3:15
+[tokens] in=13024 out=2028 total=17192
+
+=== [conv-41] Q9 Category 3 ===
+[question] What might John's financial status be?
+[expected] Middle-class or wealthy
+[response] To assess John's financial status, I need more context first:
+1. Who is this John? (e.g. a public figure, someone you know, a fictional character)
+2. Any relevant background details about him (e.g. occupation, known assets/liabilities, spending habits, sources of income if you have that info)
+
+There's no existing data about a person named John in my current workspace context to infer his financial situation.
+[evidence] D5:5
+[tokens] in=188 out=682 total=14238
+
+=== [conv-41] Q10 Category 1 ===
+[question] Who gave Maria's family money when she was younger and her family was going through tough times?
+[expected] Her aunt
+[response] I need a bit more context to answer this accurately! There are many public figures, fictional characters, and real people named Maria. Could you clarify which Maria you're referring to? For example:
+- Is she a character from a specific book, show, movie, or game?
+- Is she a public figure/celebrity?
+- Is this from a specific story or case study you're referencing?
+[evidence] D6:9, D5:8
+[tokens] in=31455 out=1790 total=19340
+
+=== [conv-42] Q1 Category 3 ===
+[question] Is it likely that Nate has friends besides Joanna?
+[expected] Yesteammates on hisvideo game team.
+[response] To answer this accurately, I need a bit more context first: which Nate and Joanna are you referring to? They could be characters from a specific show, book, movie, or even people you know personally! Let me know the source/context, and I can help figure this out for you.
+[evidence] D1:7
+[tokens] in=18003 out=1161 total=20601
+
+=== [conv-42] Q2 Category 1 ===
+[question] What kind of interests do Joanna and Nate share?
+[expected] Watching movies, making desserts
+[response] If you're referring to **Joanna Gaines (of *Fixer Upper* fame)** and **celebrity interior designer Nate Berkus**, their main shared interests are:
+1. **Interior design and home renovation**: Both are industry-leading, household-name designers focused on warm, accessible residential design, and both have starred in their own popular home makeover/renovation TV series.
+2. **Functional, guest-centric holiday home decor**: Both have publicly shared aligned Thanksgiving/holiday decorating tips prioritizing style that doesn't get in the way of guest conversation and comfort.
+3. **Curating advice and recommendations for home design enthusiasts**: Both regularly share product picks, design hacks, and gift guides for people who love home improvement and decor projects.
+
+If you're asking about a different Joanna and Nate, feel free to share more context and I can look that up for you!
+[evidence] D1:10, D1:11, D1:12, D3:4, D4:9, D10:9, D20:2
+[tokens] in=11857 out=1185 total=16184
+
+=== [conv-42] Q3 Category 2 ===
+[question] When did Joanna first watch "Eternal Sunshine of the Spotless Mind?
+[expected] 2019
+[response] I don't have any record of when Joanna first watched *Eternal Sunshine of the Spotless Mind* in the stored memory files and logs available to me. There are no mentions of this movie tied to Joanna anywhere in the workspace records.
+[evidence] D1:18
+[tokens] in=19202 out=1678 total=15822
+
+=== [conv-42] Q4 Category 2 ===
+[question] When did Nate win his first video game tournament?
+[expected] the week before 21Janury, 2022
+[response] If you're referring to **Nate Hill**, the professional Fortnite player for FaZe Clan:
+His first high-profile tournament win came in **September 2018**, during the opening week of Fortnite's Fall Skirmish series (held September 21-27, 2018). He won a duos match for FaZe Clan after his teammate FunkBomb was eliminated, carrying the team to the victory.
+
+Earlier that same month, on **September 3, 2018**, he hit his first major prize milestone: earning $100,000+ from a 4th place finish at the Fortnite Summer Skirmish Series Week 8.
+
+If you're asking about a different person named Nate, feel free to share more context!
+[evidence] D1:3
+[tokens] in=50877 out=4107 total=28203
+
+=== [conv-42] Q5 Category 3 ===
+[question] What pets wouldn't cause any discomfort to Joanna?
+[expected] Hairless cats or pigs,since they don't have fur, which is one of the main causes of Joanna's allergy.
+[response] I don't have any existing information about Joanna's allergies, preferences, or living situation right now. To give you an accurate answer, could you share relevant details first:
+1. Does she have any pet-related allergies (to dander, fur, animal saliva, etc.)?
+2. Does she have phobias or active dislikes for any specific types of animals?
+3. Are there any limits from her living situation (e.g. apartment restrictions on pet types/sizes)?
+4. Any other preferences she has mentioned about pets?
+[evidence] D2:23
+[tokens] in=10686 out=1160 total=14718
+
+=== [conv-42] Q6 Category 1 ===
+[question] What are Joanna's hobbies?
+[expected] Writing, watchingmovies, exploringnature, hanging withfriends.
+[response] From what I have on file, Joanna's main hobbies and passions are:
+1. **Writing movie scripts**: It's her lifelong passion that brings her deep fulfillment. She already has 2 published movies, just finished her second full script, and is currently working on a new love story script she got the core idea for from a dream.
+2. **Watching & recommending films**: Nate says her movie recommendations are far better than random films he picks himself, and a cinema ticket was shared after she signed off in a recent chat, so she clearly enjoys going to the movies too.
+3. **Preserving memories**: She keeps a memory notebook where she writes down her favorite memories to keep them.
+[evidence] D1:10, D2:25
+[tokens] in=12985 out=1340 total=15729
+
+=== [conv-42] Q7 Category 2 ===
+[question] How long has Nate had his first two turtles?
+[expected] three years
+[response] I can't find public information about how long Nate has had his first two turtles with the available details. Could you share a bit more context? For example:
+- Is Nate a public figure/creator, or someone you know personally?
+- Is he associated with a specific show, YouTube channel, or community?
+- Any other details about his turtles that might help narrow this down?
+[evidence] D2:12
+[tokens] in=20354 out=1276 total=19225
+
+=== [conv-42] Q8 Category 2 ===
+[question] When did Joanna finish her first screenplay?
+[expected] The Friday before 23January, 2022
+[response] If you're referring to British screenwriter and director **Joanna Hogg**, her first produced feature screenplay *Unrelated* was released publicly in 2007, but the exact date she completed writing the screenplay is not documented in publicly available sources.
+
+If you had a different Joanna in mind (please share a last name or relevant context if so), I can help look up the correct details!
+[evidence] D2:3
+[tokens] in=19521 out=1774 total=18062
+
+=== [conv-42] Q9 Category 2 ===
+[question] When did Nate get his first two turtles?
+[expected] 2019
+[response] I don't have enough context to answer this right now. The only Nate related to turtles that shows up in public search results is the fictional "Normal Nate" character from *Teenage Mutant Ninja Turtles* media, which doesn't match the question.
+
+Could you clarify which Nate you're asking about? Is this a public figure, creator, or someone you know personally? Any extra context will help me find the right answer.
+[evidence] D2:12
+[tokens] in=16726 out=1152 total=17806
+
+=== [conv-42] Q10 Category 2 ===
+[question] What major achievement did Joanna accomplish in January 2022?
+[expected] finished her screenplay and printed it
+[response] Assuming you're referring to Joanna Gaines (the most prominent public figure matching this query):
+On **January 5, 2022**, Joanna Gaines and her husband Chip officially launched their *Magnolia Network*, which replaced the DIY Network as a national cable channel. Their flagship series *Fixer Upper: Welcome Home* premiered the same day as the network's launch, marking a major milestone in their media and home renovation business expansion.
+
+If you're referring to a different Joanna, please provide more context (last name, field/industry) for a more precise answer.
+[evidence] D2:3
+[tokens] in=3558 out=1162 total=17512
+
+=== [conv-43] Q1 Category 1 ===
+[question] what are John's goals with regards to his basketball career?
+[expected] improve shooting percentage, win a championship
+[response] I don't have context about who the "John" you're referring to is. Could you share more details: is he a public NBA player, a person you know, or someone else? That way I can help find information about his basketball career goals.
+[evidence] D1:9, D6:15, D11:17
+[tokens] in=192 out=732 total=14292
+
+=== [conv-43] Q2 Category 1 ===
+[question] What are John's goals for his career that are not related to his basketball skills?
+[expected] get endorsements, build his brand, do charity work
+[response] Assuming you're referring to former 5-time NBA All-Star point guard John Wall (the most prominent public figure named John with a professional basketball background who has shared recent post-career plans):
+
+His confirmed career/life goals unrelated to his on-court playing skills are:
+1. **Youth mentorship and community philanthropy**: He runs the John Wall Family Foundation, which organizes annual backpack giveaways and community support programs for children in his hometown of Raleigh, North Carolina. He has stated a core goal of providing mentorship and hope to young people to help them pursue whatever life/career goals they have, independent of sports.
+2. He has also shared that he plans to build additional work and life projects entirely outside of basketball long-term, though specific details of those future goals have not been made public yet.
+
+If you are referring to a different John (e.g. another player, public figure, or someone you know personally), let me know more context and I can look up the relevant information.
+[evidence] D6:15, D11:17
+[tokens] in=48138 out=3486 total=22270
+
+=== [conv-43] Q3 Category 1 ===
+[question] What items does John collect?
+[expected] sneakers, fantasy movie DVDs, jerseys
+[response] I don't have any context about who this John is, or what items he collects, in the current available information. Could you share a bit more background about which John you're referring to?
+[evidence] D1:15, D12:18, D27:20
+[tokens] in=186 out=599 total=14153
+
+=== [conv-43] Q4 Category 3 ===
+[question] Would Tim enjoy reading books by C. S. Lewis or John Greene?
+[expected] C. S.Lewis
+[response] To start with a quick small correction: it's **John Green** (not Greene) for the popular YA author.
+
+I don't have specific information about Tim's personal reading preferences, but here's a breakdown of both authors' work to help you judge what he might like:
+---
+### John Green
+- Writes primarily character-driven young adult (YA) coming-of-age fiction, targeted at teens but widely enjoyed by adult readers too.
+- Themes: sincere, emotional, thoughtful explorations of grief, friendship, love, and growing up, with no dumbed-down writing for younger audiences.
+- Best fit if Tim likes realistic, heartfelt, relatable stories focused on character and emotion.
+---
+### C.S. Lewis
+- His work spans multiple genres for all age ranges:
+  1. All-ages classic fantasy: *The Chronicles of Narnia* series, accessible for kids but with deep thematic layers for adult readers.
+  2. Christian apologetics/philosophical works: *Mere Christianity*, *The Screwtape Letters* for readers interested in faith, morality, and theological ideas.
+  3. Idea-driven speculative sci-fi: The Space Trilogy for fans of slower, thoughtful science fiction.
+- Best fit if Tim likes fantasy, philosophical themes, speculative fiction, or stories with strong moral/faith undertones.
+
+If you share more about what kinds of books Tim usually enjoys, I can give a more targeted recommendation.
+[evidence] D1:14, D1:16, D1:18
+[tokens] in=2411 out=2504 total=17265
+
+=== [conv-43] Q5 Category 1 ===
+[question] What books has Tim read?
+[expected] Harry Potter, Game of Thrones, the Name of the Wind, The Alchemist, The Hobbit, A Dance with Dragons, and the Wheel of Time.
+[response] From the available memory records, here's what we know about Tim's reading:
+- His favorite books are the *Harry Potter* series and *Game of Thrones* (he's a fan of fantasy genre)
+- He also regularly reads self-improvement, personal growth, and psychology books
+- Recently he finished a book about how small consistent changes create big differences, which he said changed his approach to how he works on projects/studies
+- He has a personal book collection he shared a photo of, though the full list of all books he's read isn't recorded.
+[evidence] D1:14, D2:7, D6:8, D11:26, D20:21, D26:36, D22:13
+[tokens] in=24481 out=1337 total=15624
+
+=== [conv-43] Q6 Category 3 ===
+[question] Based on Tim's collections, what is a shop that he would enjoy visiting in New York city?
+[expected] House of MinaLima
+[response] Assuming you're referring to **Tim Burton** (the most prominent public Tim with well-documented collections of macabre art, vintage horror memorabilia, surreal illustration, stop-motion artifacts, and genre pop culture), these are shops he'd absolutely enjoy visiting in NYC:
+
+### Top pick: Forbidden Planet NYC (832 Broadway, Manhattan)
+This legendary permanent pop culture collectible store carries exactly the kind of content that aligns with his taste: vintage horror comics, sci-fi memorabilia, limited edition dark art prints, genre film merch, graphic novels, and quirky, offbeat collectibles matching his whimsical, darkly playful aesthetic. It's open year-round and has been a staple for genre fans for decades.
+
+### Runner-up: MoMA Design Store (flagship at 11 W 53rd St, Manhattan)
+MoMA hosted a massive, wildly popular Tim Burton retrospective exhibition in 2009-2010, and their store still stocks surreal art books, experimental film merch, limited-edition design objects, and Burton-adjacent surreal/experimental art pieces that fit his interests perfectly.
+
+If he's in town when it runs, the recurring **Oddities Flea Market NYC** pop-up is also a perfect fit: it features curated vendors selling taxidermy oddities, vintage medical curios, horror memorabilia, and weird ephemera aligned with his love of all things strange and macabre.
+[evidence] D2:9
+[tokens] in=42393 out=4442 total=23579
+
+=== [conv-43] Q7 Category 2 ===
+[question] In which month's game did John achieve a career-high score in points?
+[expected] June 2023
+[response] Assuming you are referring to a prominent NBA player named John:
+1. For **John Stockton** (Hall of Fame point guard, one of the most famous athletes named John in basketball): He scored his career-high 34 points in **March** (March 17, 1990, against the Sacramento Kings, and tied that career high the next day, March 18, 1990, also against the Kings).
+2. For former All-Star point guard **John Wall**: His career-high 47 points also came in **March** (March 25 of the 2016-17 NBA season, against the Memphis Grizzlies).
+
+If you had a different John in mind, feel free to share more context!
+[evidence] D3:1
+[tokens] in=22769 out=3082 total=19721
+
+=== [conv-43] Q8 Category 1 ===
+[question] Which geographical locations has Tim been to?
+[expected] California, London, the Smoky Mountains
+[response] Based on the available context, the only confirmed geographical location Tim has been to is the **United Kingdom (UK)** — he mentioned recently trying to write a story based on his experiences there.
+[evidence] D1:18, D3:2, D14:16
+[tokens] in=34019 out=1771 total=15288
+
+=== [conv-43] Q9 Category 3 ===
+[question] Which outdoor gear company likely signed up John for an endorsement deal?
+[expected] Under Armour
+[response] There are two high-profile public figures named John with recent or well-documented outdoor gear endorsement deals:
+1. **If you're referring to PGA Tour golfer John Daly**: He signed a new endorsement deal in October 2025 with **Northwestern Golf**, a high-performance golf/outdoor sports gear brand, as one of their official ambassadors.
+2. **If you're referring to pro surfer/outdoor athlete John John Florence**: He has longstanding endorsement deals with outdoor gear brands including **Dakine** (general outdoor apparel/gear) and Yeti, plus he founded his own water/outdoor gear brand *Florence Marine X*.
+
+If you had a different John in mind, share a bit more context (their profession, recent activity) and I can narrow it down further.
+[evidence] D3:15, D25:2
+[tokens] in=51734 out=3345 total=26089
+
+=== [conv-43] Q10 Category 1 ===
+[question] Which endorsement deals has John been offered?
+[expected] basketball shoes and gear deal with Nike, potential sponsorship with Gatorade, Moxie a popular beverage company, outdoor gear company
+[response] Could you please specify which John you're referring to (full name, profession, or any context about who they are)? That way I can accurately look up the endorsement deals they've been offered.
+[evidence] D3:13, D3:15, D25:2, D29:4
+[tokens] in=188 out=673 total=14229
+
+=== [conv-44] Q1 Category 2 ===
+[question] Which year did Audrey adopt the first three of her dogs?
+[expected] 2020
+[response] Assuming you're referring to **Audrey Hepburn** (the most prominent public figure named Audrey known for her love of dogs), there is no single year she adopted all three of her first dogs — they joined her family at different times:
+1. Her earliest confirmed dog was a Boxer, photographed with her in **1950** in London's Richmond Park.
+2. Her next and most famous companion was Yorkshire Terrier *Mr. Famous*, who was with her by **1957** (he even had a cameo in her film *Funny Face* that year).
+3. After Mr. Famous died in the late 1950s, her husband Mel Ferrer gifted her a second Yorkshire Terrier named *Assam of Assam*, her third confirmed dog.
+
+If you're referring to the three Jack Russell Terriers she owned later in life, she was photographed with them regularly starting in **1987** (late 1980s), though exact individual adoption years for those three are not publicly documented.
+
+If you had a different Audrey in mind, feel free to share more context!
+[evidence] D1:7
+[tokens] in=120903 out=4896 total=32493
+
+=== [conv-44] Q2 Category 2 ===
+[question] When did Andrew start his new job as a financial analyst?
+[expected] The week before March 27, 2023
+[response] There are multiple people named Andrew working as financial analysts, the most relevant public record I found is:
+Andrew Alltop, Financial Planning Analyst at Key Management Group, started in December 2021.
+
+If you are referring to a different Andrew, could you share his last name or the company he works for so I can look up more accurate details?
+[evidence] D1:2
+[tokens] in=14244 out=1280 total=17753
+
+=== [conv-44] Q3 Category 1 ===
+[question] What kind of indoor activities has Andrew pursued with his girlfriend?
+[expected] boardgames, volunteering at pet shelter, wine tasting, growing flowers
+[response] I don't have any context about who "Andrew" is in your question. Could you please clarify:
+1. Is Andrew a public figure/celebrity? If yes, can you share his full name or any relevant background?
+2. If he's a personal acquaintance, do you have any additional context I should know to help answer this question?
+[evidence] D13:1, D23:1, D25:1, D19:15
+[tokens] in=192 out=1303 total=14863
+
+=== [conv-44] Q4 Category 1 ===
+[question] What kind of places have Andrew and his girlfriend checked out around the city?
+[expected] cafes, new places to eat, open space for hikes, pet shelter, wine tasting event, park
+[response] Based on the available memory logs:
+1. The only confirmed spot they've checked out together recently is a local outdoor nature spot for a picnic last Friday.
+2. Andrew is also familiar with leashed dog parks around the city, and the two are planning to check out a coastal hill trail with ocean views for a dog-friendly hike next month (once they confirm it allows off-leash dogs).
+
+No other specific locations they've visited are noted in the existing records.
+[evidence] D3:1, D3:11, D4:2, D6:1, D13:1, D23:3, D25:1, D27:1
+[tokens] in=17984 out=2505 total=17424
+
+=== [conv-44] Q5 Category 2 ===
+[question] When did Audrey make muffins for herself?
+[expected] The week of April 3rd to 9th
+[response] The most relevant public result I found is from blogger Audrey (Audreysaurus), who shared a blueberry muffin recipe and mentioned she regularly makes muffins for herself to eat in the morning with coffee, in a post published **November 12, 2021**.
+
+If you're referring to a different Audrey (e.g., a character from a show, a social media creator, a person you know, or a specific viral moment), can you share a bit more context so I can give you the exact answer you're looking for?
+[evidence] D3:18
+[tokens] in=31338 out=1638 total=16340
+
+=== [conv-44] Q6 Category 2 ===
+[question] When did Audrey see a hummingbird?
+[expected] first week of May 2023
+[response] I don't have enough context to answer that definitively, as there is no widely documented public incident of a well-known person named Audrey seeing a hummingbird on a specific date.
+
+The only related public result is that artist **Audrey Avril created a painting of a leucistic (low-pigment) ruby-throated hummingbird in December 2025**, which she debuted at a pop-up event on December 4, 2025, but there is no record of when she saw the hummingbird that inspired the work.
+
+If you're referring to a specific Audrey (someone you know, a character from a story/show, or a less-famous public figure), please share more context and I can help look for more details!
+[evidence] D4:1
+[tokens] in=40690 out=2659 total=22632
+
+=== [conv-44] Q7 Category 2 ===
+[question] When did Audrey adopt Pixie?
+[expected] around April 2, 2023
+[response] It looks like there's no widely publicized record of a public figure named Audrey adopting a pet named Pixie in public search results. The closest relevant result is that Gypsy Rose Blanchard and Ryan Anderson adopted a puppy named Pixie in January 2024, and Audrey Hepburn had a pet deer named Pippin (not Pixie) in 1959 for a film role.
+
+Could you clarify which Audrey you're asking about? Is this a specific celebrity, fictional character, or someone you know personally? That will help me find the right information.
+[evidence] D2:1
+[tokens] in=19554 out=1239 total=17835
+
+=== [conv-44] Q8 Category 2 ===
+[question] How many years passed between Audrey adopting Pixie and her other three dogs?
+[expected] three years
+[response] I couldn't find public information about an Audrey adopting a dog named Pixie alongside three other dogs — could you share a bit more context about who this Audrey is (e.g. a public figure, character from a show/book, someone you follow)? That will help me look up the right adoption dates!
+[evidence] D2:1, D1:7
+[tokens] in=59316 out=1322 total=19056
+
+=== [conv-44] Q9 Category 2 ===
+[question] Did Andrew have a pet dog during March 2023?
+[expected] No
+[response] The name "Andrew" refers to multiple public figures, so the answer depends on which person you are asking about:
+1. **Prince Andrew, Duke of York**: Yes, he had pet dogs during March 2023. He inherited two of Queen Elizabeth II's corgis after her death in September 2022, and also owned 5 Norfolk terriers at that time, so he had 7 pet dogs total through that period.
+2. **Andrew Yang**: No, he rehomed his family's dog Grizzly prior to April 2021, so he did not have a pet dog in March 2023.
+3. **Andrew Lloyd Webber**: Yes, he got a therapy dog in or before October 2021, so he would have had a pet dog during March 2023.
+
+If you are referring to a different specific Andrew, please share more context for an accurate answer.
+[evidence] D2:8
+[tokens] in=17264 out=2183 total=18541
+
+=== [conv-44] Q10 Category 1 ===
+[question] What kind of classes or groups has Audrey joined to take better care of her dogs?
+[expected] positive reinforcement training workshop to bond with pets, dog training course, agility training course, grooming course, dog-owners group
+[response] I couldn't find public information about a specific person named Audrey who joined particular classes or groups to care for her own dogs from the available search results.
+
+The results show multiple Audreys who work professionally in dog training/animal welfare:
+- Some are certified dog obedience instructors (via programs like Animal Behavior College) who lead group training classes
+- Others participate in animal charity events like PAWSwalk, or are involved with AKC dog show groups
+
+If you're referring to a specific Audrey (someone you know, a public figure you have in mind, or a fictional character), could you share a bit more context? That will help me find the exact information you're looking for.
+[evidence] D6:2, D10:1, D14:2, D16:6, D27:2
+[tokens] in=32462 out=1665 total=19367
+
+=== [conv-47] Q1 Category 3 ===
+[question] What are John's suspected health problems?
+[expected] Obesity
+[response] I don't have any information about who John is or his suspected health problems currently. Please provide more relevant context (like John's identity, any related background information you have) so I can help you better.
+[evidence] D1:27
+[tokens] in=188 out=464 total=14020
+
+=== [conv-47] Q2 Category 2 ===
+[question] Which recreational activity was James pursuing on March 16, 2022?
+[expected] bowling
+[response] To answer this accurately, could you please specify which James you are referring to? "James" is a very common name, and there is no additional context about which public figure or person you are asking about here.
+[evidence] D1:26
+[tokens] in=38436 out=2115 total=21281
+
+=== [conv-47] Q3 Category 1 ===
+[question] Which places or events have John and James planned to meet at?
+[expected] VR Club, McGee's, baseball game
+[response] Based on all available saved data in your workspace:
+1. There are no mentions of any person named James across all your notes and chat summaries
+2. There are also no records of the person named John in your logs having planned any meetings or meetups with anyone named James at any location or event.
+
+If you have additional context or files where this information might be stored, feel free to share details and I can look further.
+[evidence] D1:36, D21:15, D23:5, D23:6
+[tokens] in=27509 out=1636 total=15737
+
+=== [conv-47] Q4 Category 1 ===
+[question] Do both James and John have pets?
+[expected] No
+[response] I don't have any context about who the James and John you're referring to are, so I can't answer whether they have pets. Could you provide more details about these two people?
+[evidence] D1:12, D2:18
+[tokens] in=188 out=762 total=14318
+
+=== [conv-47] Q5 Category 2 ===
+[question] When did John resume playing drums in his adulthood?
+[expected] February 2022
+[response] There are multiple public figures named John who play drums, so the answer depends on which person you're referring to:
+- The most well-documented case is **John Stanier (drummer for Helmet, Tomahawk, Battles)**: After Helmet split in 1998, he took a break from drumming to focus on DJing in New York, and resumed his professional drumming career in 2000 when he was recruited by Australian band The Mark of Cain.
+
+If you're asking about a different John (e.g. John Lennon, John Bonham, John Stamos, John Densmore), let me know and I can share more specific context! None of those other well-known Johns had a multi-year break from drumming in adulthood that they later resumed.
+[evidence] D3:5
+[tokens] in=34012 out=2958 total=23689
+
+=== [conv-47] Q6 Category 1 ===
+[question] What are John and James' favorite games?
+[expected] John's favorite game is CS:GO, and James's is Apex Legends.
+[response] I don't have any stored information about John or James' favorite games in my memory:
+- James is not mentioned at all in any of my saved notes
+- There are mentions of John in a few past group chat summaries, but none of them reference his favorite games or gaming preferences at all.
+
+If you can share more context about who they are or any relevant conversations that include this info, I can help you look it up!
+[evidence] D3:11, D4:16
+[tokens] in=16991 out=1502 total=16628
+
+=== [conv-47] Q7 Category 3 ===
+[question] Does James live in Connecticut?
+[expected] Likely yes
+[response] There are many people named James who live in Connecticut:
+- Former FBI director James Comey resides in Westport, Connecticut (on the state's Gold Coast) with his family, per public records.
+- Public directory listings show hundreds of people with the first name James living in various parts of Connecticut (Hartford, New Haven, Manchester, etc.).
+
+If you're asking about a specific James (with a last name or other context), let me know and I can look up more exact details.
+[evidence] D5:1
+[tokens] in=25889 out=800 total=15635
+
+=== [conv-47] Q8 Category 3 ===
+[question] In which state is the shelter from which James adopted the puppy?
+[expected] Connecticut.
+[response] I couldn't find specific public information about a person named James adopting a puppy from a shelter with enough detail to identify the state the shelter is located in.
+
+Could you share a bit more context? For example:
+- Is James a public figure/celebrity?
+- Is this from a specific viral story, video, or piece of content you saw?
+- Do you have any other details about the adoption (like the puppy's name, shelter name, or when the adoption happened)?
+
+With more context I can help you find the exact state.
+[evidence] D5:1
+[tokens] in=47494 out=1382 total=20533
+
+=== [conv-47] Q9 Category 1 ===
+[question] How many pets does James have?
+[expected] Three dogs.
+[response] I don't have any information about someone named James in my current memory or context. Could you specify which James you're referring to, or share a bit more context about him?
+[evidence] D1:12, D1:14, D5:1
+[tokens] in=3666 out=1691 total=15500
+
+=== [conv-47] Q10 Category 1 ===
+[question] What are the names of James's dogs?
+[expected] Ned, Daisy, Max
+[response] It depends which James you're asking about! Here are the most common results:
+- **LeBron James**: Has a French bulldog named *Indigo Sky*
+- **James Charles**: Has two dogs, *Finn* and *Theodore*
+- **Robert James Rallison (TheOdd1sOut)**: Has a dog named *Poppy*
+- **James Middleton (Catherine Princess of Wales' brother)**: Has dogs named *Ella, Inca, Zulu, Mabel, and Luna*
+
+Let me know which James you mean and I can give you more details!
+[evidence] D1:14, D5:1
+[tokens] in=2098 out=825 total=15712
+
+=== [conv-48] Q1 Category 2 ===
+[question] What kind of project was Jolene working on in the beginning of January 2023?
+[expected] electricity engineering project
+[response] I don't have enough context to answer this correctly — "Jolene" is a very common name/term, and the public search results show multiple unrelated Jolene references (a sewing school owner, a snowy owl tracked by Project SNOWstorm, the Dolly Parton song, a sports bar, etc.).
+
+Could you clarify who this Jolene is? Is she a public figure, a specific person/character you're referring to, or associated with a particular industry/community? That will help me narrow down the right information.
+[evidence] D1:2
+[tokens] in=14179 out=823 total=17338
+
+=== [conv-48] Q2 Category 1 ===
+[question] Which of Deborah`s family and friends have passed away?
+[expected] mother, father, her friend Karlie
+[response] Assuming you are referring to **Deborah Roberts (ABC News journalist, wife of Al Roker)**, the publicly known members of her family and close friends who have passed away are:
+
+### Family:
+1. **Annette (oldest sister)** – Died July 2022 after a 5-6 year battle with Alzheimer's/dementia
+2. **Jackie Bryant (older brother)** – Died March 2025 at age 82 (cause of death not publicly revealed)
+3. **Lawrence Clarington (brother-in-law)** – Died unexpectedly in February 2022
+4. **Pepper (family rescue dog, 12 years old)** – Died June 2024 after emergency surgery complications
+
+### Close friends:
+1. **Beth Powers Lamm** (lifelong friend, former WESH 2 News reporter) – Died July 2024 from cancer
+
+If you are referring to a different public figure named Deborah (e.g. Dame Deborah James, Deborah Finck, etc.) or a personal acquaintance, please share more context and I can provide accurate details for that person.
+[evidence] D1:5, D2:1, D6:4
+[tokens] in=15562 out=3279 total=25624
+
+=== [conv-48] Q3 Category 2 ===
+[question] When did Deborah`s mother pass away?
+[expected] a few years before 2023
+[response] There are several well-known public figures named Deborah, so the answer depends on which you are referring to:
+1. If you mean **Deborah Lacks** (the daughter of Henrietta Lacks, from the book *The Immortal Life of Henrietta Lacks*): Her mother Henrietta Lacks died of cervical cancer in **1951**, when Deborah was only 2 years old.
+2. If you mean **Deborah (Rebekah's nurse)** from the Hebrew Bible/Old Testament: No exact historical date is recorded, but religious texts state she died while Jacob was traveling to the Land of Canaan near Bethel, where she was buried.
+3. No public information is available about the date of death of the mother of the biblical Prophetess Deborah (Judge of Israel).
+
+If you are referring to a different Deborah, please share more context about who she is.
+[evidence] D1:5
+[tokens] in=15704 out=1139 total=16200
+
+=== [conv-48] Q4 Category 2 ===
+[question] When did Jolene`s mother pass away?
+[expected] in 2022
+[response] It depends on which Jolene/Jolyne you are referring to:
+1. If you mean **Jolyne Cujoh (often romanized/pronounced as "Jolene")**, the protagonist of *JoJo's Bizarre Adventure Part 6: Stone Ocean*:
+   - In the main manga/anime canon, her unnamed mother (ex-wife of Jotaro Kujo) is not stated to have died.
+   - In an alternate non-canon story spinoff, she dies from illness 10 days before the events of Stone Ocean begin.
+2. If this was a typo and you meant **Angelina Jolie**:
+   Her mother Marcheline Bertrand passed away in **January 2007** at age 56, after fighting ovarian cancer for almost 8 years.
+[evidence] D1:6
+[tokens] in=25631 out=2228 total=20233
+
+=== [conv-48] Q5 Category 2 ===
+[question] When did Jolene's mom gift her a pendant?
+[expected] in 2010
+[response] You're likely referring to **Jolyne Cujoh** (likely a spelling variation of "Jolene") from *JoJo's Bizarre Adventure: Stone Ocean*:
+Her mother gifted her the pendant (which contained a hidden fragment of a Stand Arrow, arranged by Jolyne's father Jotaro Kujo) in **2011 (the year Stone Ocean is set)**, after Jotaro and Jolyne's mother divorced, when Jolyne was being held in pre-trial detention awaiting her transfer to Green Dolphin Street Prison at the very start of the Stone Ocean story arc.
+[evidence] D1:8
+[tokens] in=12677 out=1555 total=16625
+
+=== [conv-48] Q6 Category 3 ===
+[question] In what country did Jolene's mother buy her the pendant?
+[expected] In France
+[response] It looks like the name "Jolene" appears across many different stories, so I need a bit more context to answer accurately! Are you referring to Jolene from a specific book, show, anime, or other piece of media?
+
+For context, the closest character match is **Jolyne Cujoh** (often romanized/typed as "Jolene" by mistake) from *JoJo's Bizarre Adventure: Stone Ocean*. Her mother gave her a stone pendant (housing a Stand Arrow fragment) at Jotaro Kujo (her father)'s instruction, but it was originally Jotaro's property. There is no canon information about where it was purchased, but Jotaro is Japanese, and Jolyne's mother is an American woman living in Florida, U.S.
+
+If this is not the Jolene you're asking about, let me know which work she's from, and I'll find the answer!
+[evidence] D1:8
+[tokens] in=125890 out=6245 total=39992
+
+=== [conv-48] Q7 Category 1 ===
+[question] What symbolic gifts do Deborah and Jolene have from their mothers?
+[expected] pendants
+[response] I can't find results for distinct characters named Deborah and Jolene with symbolic maternal gifts across popular books, films, or stories. Could you share what work (book, movie, show, etc.) these characters are from? That will help me find the exact details you're asking for!
+[evidence] D1:8, D1:9
+[tokens] in=29815 out=1537 total=18528
+
+=== [conv-48] Q8 Category 2 ===
+[question] Which country were Jolene and her mother visiting in 2010?
+[expected] France
+[response] I can't find any public information about a Jolene and her mother visiting a specific country in 2010 from general web search results.
+
+Could you share a bit more context? For example:
+- Is this Jolene a character from a specific book, show, movie, or story?
+- Is this a real person you're referring to (e.g. a public figure, someone you know)?
+- Are there any other details you remember about this trip that could help narrow it down?
+[evidence] D1:8
+[tokens] in=25483 out=2156 total=21127
+
+=== [conv-48] Q9 Category 1 ===
+[question] What helped Deborah find peace when grieving deaths of her loved ones?
+[expected] yoga, old photos, the roses and dahlias in a flower garden, nature
+[response] Could you please clarify which Deborah you are referring to? There are multiple public figures and characters named Deborah, and the search results do not specify a particular Deborah's experience with grief. Additional context (e.g. if she is a public figure, a character from a book/show, or someone you know personally) will help me find the accurate answer for you.
+[evidence] D1:15, D2:3, D6:4, D15:29
+[tokens] in=13994 out=484 total=16926
+
+=== [conv-48] Q10 Category 2 ===
+[question] When did Deborah's father pass away?
+[expected] January 25, 2023
+[response] There are multiple public figures, historical figures, and fictional characters named Deborah, so I'll need a bit more context to answer accurately:
+- Are you referring to a specific Deborah (e.g., a celebrity, historical figure, fictional character, public personality)?
+
+For example, if you mean **Debra Morgan from the *Dexter* franchise**: her father Harry Morgan dies when she is a teenager (no exact canonical date is given in the show/books). For biblical Deborahs (the prophetess in Judges, or the wet nurse in Genesis), no records of their fathers' death dates exist in surviving texts.
+[evidence] D2:1
+[tokens] in=2333 out=1263 total=16403
+
+=== [conv-49] Q1 Category 1 ===
+[question] What kind of car does Evan drive?
+[expected] Prius
+[response] I don't have any information about Evan (or which Evan you're referring to) in my current memory or workspace context. Could you share more details about who this Evan is, so I can help find the answer?
+[evidence] D1:2, D1:4, D18:1, D18:3, D22:2
+[tokens] in=10684 out=684 total=14240
+
+=== [conv-49] Q2 Category 1 ===
+[question] What kinds of things did Evan have broken?
+[expected] His old Prius and his new Prius.
+[response] I don't have any existing records of Evan or items he had broken in my conversation history or memory files. Could you share more context about when this was discussed or what Evan is related to?
+[evidence] D18:1, D18:2, D18:3, D1:2, D1:4
+[tokens] in=7087 out=993 total=16326
+
+=== [conv-49] Q3 Category 1 ===
+[question] Where has Evan been on roadtrips with his family?
+[expected] Rockies, Jasper
+[response] I don't have any records of Evan or his family roadtrips in my current memory files. If you have more context (like which Evan you're referring to, or any details about the trips you're asking about), I can help look for relevant information or track it down for you.
+[evidence] D1:2, D1:4, D2:1
+[tokens] in=38401 out=1602 total=16041
+
+=== [conv-49] Q4 Category 1 ===
+[question] How many Prius has Evan owned?
+[expected] two
+[response] I don't have enough context to answer that yet—there's no widely known public figure named Evan who's famous for owning multiple Priuses, and there's no mention of an Evan in your local workspace context.
+
+Could you clarify who Evan is (e.g. a public figure, someone you know, a character from content you follow)? That will help me find the answer.
+[evidence] D1:2, D1:4
+[tokens] in=19709 out=1416 total=17860
+
+=== [conv-49] Q5 Category 2 ===
+[question] Which hobby did Sam take up in May 2023?
+[expected] painting
+[response] It looks like "Sam" is a very common name, and there's no widely reported public record of a well-known Sam taking up a specific new hobby in May 2023 from public search results. Could you clarify which Sam you are asking about (e.g. their full name, profession, or relevant context)? That would help me find the exact answer for you.
+[evidence] D1:11
+[tokens] in=7645 out=1219 total=18973
+
+=== [conv-49] Q6 Category 3 ===
+[question] Which country was Evan visiting in May 2023?
+[expected] Canada
+[response] I don't have enough context to answer this accurately — there are many public figures and private individuals named Evan. Could you clarify which Evan you're asking about (e.g., their last name, profession, or why their May 2023 trip is notable)?
+
+If you're referring to *Evan Gershkovich* (the Wall Street Journal journalist covering Russia), he was detained by Russian authorities in Yekaterinburg, Russia in March 2023 and remained in custody in Russia through May 2023.
+[evidence] D2:1
+[tokens] in=16729 out=1588 total=17785
+
+=== [conv-49] Q7 Category 1 ===
+[question] How many roadtrips did Evan take in May 2023?
+[expected] two
+[response] I don't have any stored records or memory data from May 2023 (my earliest memory logs start in October 2024), so I can't tell you how many roadtrips Evan took that month.
+[evidence] D1:4, D2:1
+[tokens] in=14647 out=1446 total=15379
+
+=== [conv-49] Q8 Category 1 ===
+[question] What new hobbies did Sam consider trying?
+[expected] Painting, kayaking, hiking, cooking, running
+[response] I don't have any records of Sam or the hobbies he considered trying in my current memory files. Could you share more context about when this was discussed, or any additional details, so I can help you find the answer?
+[evidence] D1:11, D2:10, D10:8, D13:6, D13:8, D20:6, D7:2, D7:4, D7:6, D21:19
+[tokens] in=38777 out=1473 total=15129
+
+=== [conv-49] Q9 Category 1 ===
+[question] What hobby did Evan start practicing a few years ago that he enjoys?
+[expected] Watercolor painting
+[response] If you're referring to Evan of the popular kids YouTube channel EvanTubeHD, a few years before his channel blew up, he started creating stop-motion clay videos featuring his Angry Birds toys as a hobby he loved. He later expanded this hobby into making toy review and gaming content, which turned into a hugely successful channel.
+
+If you're asking about a different Evan, feel free to share a bit more context (like their last name, profession, or what they're known for) and I can help you find the right answer!
+[evidence] D1:14, D1:16, D8:13, D8:14
+[tokens] in=6503 out=2167 total=18279
+
+=== [conv-49] Q10 Category 2 ===
+[question] When did Evan go to Jasper with his family?
+[expected] weekend before May 24, 2023
+[response] I can't find relevant information about this from public sources. Could you share a bit more context?
+- Who is Evan you're referring to? (Is he a public figure, or someone you know personally?)
+- Is Jasper Jasper National Park in Canada, or another location named Jasper?
+[evidence] D2:1
+[tokens] in=25640 out=532 total=15686
+
+=== [conv-50] Q1 Category 2 ===
+[question] When did Calvin first travel to Tokyo?
+[expected] between 26 March and 20 April 2023
+[response] There are a few public figures/characters named Calvin with documented connections to Tokyo:
+1. **Calvin Ke (travel blogger):** His first trip to Tokyo (as part of a 12-day Japan itinerary spanning Tokyo, Kyoto, Osaka and Yokohama) was in November 2019.
+2. **Calvin Harris (DJ/producer):** He performed at Tokyo venues as early as July 2015, though there is no public record of his first personal trip to the city.
+3. **Calvin (Calvin & Hobbes fictional character):** Tokyo is referenced briefly in a small number of strips, but he never travels there in the official comic canon.
+
+If you're referring to a specific Calvin (e.g. a public figure with a different last name, or someone you know personally), let me know and I can look for more targeted information.
+[evidence] D3:1
+[tokens] in=2283 out=1565 total=16643
+
+=== [conv-50] Q2 Category 1 ===
+[question] What items did Calvin buy in March 2023?
+[expected] mansion in Japan, luxury car Ferrari 488 GTB
+[response] There is no publicly available information about purchases made by a general individual named Calvin in March 2023.
+
+If you are referring to **Calvin Klein brand items released/sold in March 2023**:
+- The brand's viral Spring 2023 campaign (launched March 15, 2023) starred BlackPink's Jennie Kim and BTS's Jungkook, featuring underwear and denim jeans products that sold out globally within 3 days of the campaign launch.
+- Michael B. Jordan also modeled Calvin Klein's 2023 spring underwear line that same month.
+
+If you are asking about a specific public figure/character named Calvin, please share more context (e.g. their full name, what they are known for) and I can help you find more targeted information.
+[evidence] D1:3, D2:1
+[tokens] in=15753 out=1837 total=18061
+
+=== [conv-50] Q3 Category 2 ===
+[question] When did Dave see Aerosmith perform live?
+[expected] on the weekend before March 26, 2023
+[response] Assuming you're referring to **Dave Grohl** (the most well-known public "Dave" associated with Aerosmith):
+
+The most documented instance of him seeing Aerosmith perform live as an audience member was **February 1, 2019**, at the Bud Light Super Bowl Music Fest in Atlanta (the weekend of Super Bowl LIII). He watched the show side-stage with then-Foo Fighters drummer Taylor Hawkins, and was even spotted by Steven Tyler mid-performance, who brought the mic over to let Grohl sing along.
+
+He also performed *with* Aerosmith frontman Steven Tyler (playing drums on *Walk This Way*) at Howard Stern's 60th birthday party on January 31, 2014, but that was a collaborative set rather than him attending purely as a fan.
+
+If you're referring to a different Dave, let me know more context!
+[evidence] D2:10
+[tokens] in=46439 out=2781 total=21224
+
+=== [conv-50] Q4 Category 1 ===
+[question] Which bands has Dave enjoyed listening to?
+[expected] Aerosmith, The Fireworks
+[response] Based on the available records, there's no specific information about which exact bands Dave enjoys listening to. What we do know:
+1. He's a big fan of live music and attended multiple concerts recently (he shared photos of concert crowds from shows he went to last month)
+2. He listens to music while working on car restoration projects in his garage (he calls it a helpful accompaniment to his work)
+3. He's friends with Calvin, a musician who tours with Frank Ocean, and is supportive of Calvin's music work.
+
+If you have more context about which Dave you're referring to, or if there are other records I should check, let me know!
+[evidence] D2:10, D23:9
+[tokens] in=25174 out=2376 total=20387
+
+=== [conv-50] Q5 Category 3 ===
+[question] Which country do Calvin and Dave want to meet in?
+[expected] United States
+[response] If you're referring to Calvin Butler and Dave Johnson from the sitcom *The Neighborhood*, the only documented trip/meeting they plan together is within the **United States** (they take a road trip to the US state of Nevada for a classic car show). There is no public mention of this pair planning to meet in another country.
+
+If you're asking about a different pair of people named Calvin and Dave, please share more context (e.g. what they're known for, context around the planned meeting) so I can help you find the right answer.
+[evidence] D3:9, D3:10
+[tokens] in=26827 out=1468 total=17834
+
+=== [conv-50] Q6 Category 1 ===
+[question] What are Dave's dreams?
+[expected] open a car maintenance shop, work on classic cars, build a custom car from scratch
+[response] There are a few common references to "Dave's Dream(s)" depending on context:
+1. **Dave's Fun Algebra Class media**: An unfinished, obscure entry in the Dave's Fun Algebra Class game series, set entirely inside the character Dave's dream world.
+2. **Lowrider culture**: *Dave's Dream* is the name of a famous customized 1969 Ford LTD lowrider, an iconic example of Chicano lowriding culture held in the collection of the US National Museum of American History.
+3. **WWII history**: *Dave's Dream* was the post-war renamed version of the B-29 Superfortress bomber (originally named *Big Stink*) that participated in the 1945 Nagasaki atomic bomb attack.
+4. **Real person wish fulfillment**: A man named Dave who recovered from illness had two dreams: attending an in-person race and visiting family in Daytona, Florida, which were fulfilled by the Dreamweaver Foundation.
+
+If you're referring to a specific Dave, feel free to share more context and I can give a more precise answer!
+[evidence] D4:5, D4:5, D5:5
+[tokens] in=15561 out=1108 total=15993
+
+=== [conv-50] Q7 Category 1 ===
+[question] Which types of cars does Dave like the most?
+[expected] classic vintage cars
+[response] There are multiple well-known Daves with different car preferences, depending on which one you're referring to:
+- **Dave Ramsey (finance personality)**: His signature recommended "Dave car" is low-cost, reliable beater/clunker vehicles (older, affordable models that run well without requiring you to take on debt)
+- **Dave Grohl (Foo Fighters frontman)**: Favors vintage 1960s/70s classic muscle cars, plus Italian hypercars like Ferraris. He has owned a Ford Bronco, Jaguar XK-E V12, and Audi models among others.
+- **Santan Dave (UK rapper)**: Prefers luxury performance cars, particularly Aston Martins, and also owns a Lamborghini Urus.
+- **English Dave (GTA Online character)**: Associated with the Volkswagen Beetle.
+- **Dave Mustaine (Megadeth frontman)**: Is a fan of Range Rovers, specifically for their high-end interior quality.
+
+If you're referring to a different specific Dave, feel free to share more context!
+[evidence] D4:5, D1:2, D3:12, D4:7
+[tokens] in=2463 out=1653 total=16350
+
+=== [conv-50] Q8 Category 3 ===
+[question] Does Dave's shop employ a lot of people?
+[expected] Yes
+[response] There are multiple businesses referred to as "Dave's shop" — here's what we found for the most common ones:
+1. If you're referring to **Dave's Markets** (the regional family-owned supermarket chain in Greater Cleveland, Ohio, US often shortened to "Dave's"): As of 2021, they employed 1,800 people across 12 locations, which is a fairly large headcount for a regional grocery chain.
+2. If you're referring to the US fintech company **Dave Inc.**: Public records list them as having fewer than 1,000 employees.
+
+If you had a specific local Dave's shop in mind, share more context about what kind of business it is/where it's located, and I can look up more precise details.
+[evidence] D4:17
+[tokens] in=32837 out=2204 total=18668
+
+=== [conv-50] Q9 Category 2 ===
+[question] When did Dave start his car maintenance shop?
+[expected] May 1, 2023
+[response] There are multiple car maintenance shops owned by people named Dave, but the most well-documented results show:
+1. **Dave's Auto Service (Boyertown, Pennsylvania, US)**: Founded by Dave & Kim Graber in **September 2000**, and has operated at the same location ever since.
+2. **Dave and his Sons' Auto Center**: Has been in business for 35 years as of 2025, meaning it was founded around 1990.
+
+If you're referring to a specific Dave's shop in a different city/region, share more context and I can find the exact founding date for you.
+[evidence] D4:1
+[tokens] in=22059 out=1027 total=15903
+
+=== [conv-50] Q10 Category 2 ===
+[question] When did a mishap occur with Calvin's musical gear and favorite mic?
+[expected] On a week before 16 May, 2023
+[response] I can't find any widely documented public incident matching a mishap with "Calvin's musical gear and favorite mic" in public search results. 
+
+Could you share a bit more context to help narrow this down? For example:
+- Who this Calvin is (full name, what he's known for, band/community he's part of)
+- If this incident was referenced in a specific video, podcast, show, or local event
+- Any other details you remember about what happened (how the gear was damaged, where it occurred)
+[evidence] D6:3
+[tokens] in=23540 out=1527 total=20931
+
+=== TOTAL USAGE ===
+input_tokens: 2239616
+output_tokens: 164959
+total_tokens: 1809110

@@ -1,0 +1,2 @@
+{"id": "msg_99b76c5113a643f1817a9635a84b514f", "role": "user", "parts": [{"type": "text", "text": "You are a calculator. what is 1+1"}], "created_at": "2026-02-26T03:47:43.512Z"}
+{"id": "msg_1be3ba932e484ec9a8191fa63834a20e", "role": "assistant", "parts": [{"type": "text", "text": "2"}], "created_at": "2026-02-26T03:47:43.526Z"}

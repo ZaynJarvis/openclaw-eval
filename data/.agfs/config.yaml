@@ -1,0 +1,17 @@
+plugins:
+  localfs:
+    config:
+      local_dir: /Users/bytedance/Downloads/test_openviking_openclaw/openclaw-eval/data/viking
+    enabled: true
+    path: /local
+  queuefs:
+    enabled: true
+    path: /queue
+  serverinfofs:
+    config:
+      version: 1.0.0
+    enabled: true
+    path: /serverinfo
+server:
+  address: :1833
+  log_level: warn

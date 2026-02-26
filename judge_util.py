@@ -62,10 +62,12 @@ def load_answers(path: str) -> list[dict]:
     Optional keys: sample_id, qi, category, evidence.
     """
     with open(path, "r", encoding="utf-8") as f:
+        if path.endswith(".jsonl"):
+            return [json.loads(line) for line in f if line.strip()]
         data = json.load(f)
-    if isinstance(data, dict):
-        return data.get("results", [])
-    return data
+        if isinstance(data, dict):
+            return data.get("results", [])
+        return data
 
 
 async def grade_answers(

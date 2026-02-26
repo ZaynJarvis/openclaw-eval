@@ -6,7 +6,7 @@ Evaluate OpenClaw responses using multi-round conversations from txt files or [L
 
 ```bash
 uv sync
-uv run eval.py ingest ./locomo10_small.json --output output/trial.txt --tail "[try to remember what's said in the group]"
+uv run eval.py ingest ./locomo10_small.json --output output/trial.txt --tail "[remember what's said, keep existing memory]"
 uv run eval.py qa ./locomo10_small.json --output output/answers.txt --count 10
 export OPENAI_API_KEY=sk-proj-Bc..
 uv run judge.py output/answers.txt.json

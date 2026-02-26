@@ -17,6 +17,7 @@ Usage:
 """
 
 import argparse
+import asyncio
 import json
 import os
 import sys
@@ -137,7 +138,7 @@ def build_session_messages(
         dt_key = f"{sk}_date_time"
         date_time = conv.get(dt_key, "")
 
-        parts = ["[group chat conversation]"]
+        parts = [f"[group chat conversation: {date_time}]"]
         for msg in conv[sk]:
             parts.append(format_locomo_message(msg))
         if tail:
@@ -205,6 +206,33 @@ def reset_session(session_id: str) -> None:
         print(f"    [reset] could not archive session file: {e}", file=sys.stderr)
 
 
+def viking_ingest(msg: str) -> None:
+    """Save a message to OpenViking via `ov add-memory`."""
+    import subprocess
+    result = subprocess.run(
+        ["ov", "add-memory", msg],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or f"ov exited with code {result.returncode}")
+
+
+def send_message_with_retry(
+    base_url: str, token: str, user: str, message: str, retries: int = 2
+) -> tuple[str, dict]:
+    """Call send_message with up to `retries` retries on failure."""
+    last_exc = None
+    for attempt in range(retries + 1):
+        try:
+            return send_message(base_url, token, user, message)
+        except Exception as e:
+            last_exc = e
+            if attempt < retries:
+                print(f"    [retry {attempt + 1}/{retries}] {e}", file=sys.stderr)
+    raise last_exc
+
+
 def send_message(
     base_url: str, token: str, user: str, message: str
 ) -> tuple[str, dict]:
@@ -263,30 +291,51 @@ def run_ingest(
                 preview = msg.replace("\n", " | ")[:80]
                 print(f"  [{label}] {preview}...", file=sys.stderr)
 
-                try:
-                    reply, usage = send_message(args.base_url, args.token, user_key, msg)
-                    print(f"    -> {reply[:80]}{'...' if len(reply) > 80 else ''}", file=sys.stderr)
-                    results.append({
-                        "sample_id": sample_id,
-                        "session": meta["session_key"],
-                        "user": user_key,
-                        "reply": reply,
-                        "usage": usage,
-                    })
-                except Exception as e:
-                    print(f"    -> [ERROR] {e}", file=sys.stderr)
-                    results.append({
-                        "sample_id": sample_id,
-                        "session": meta["session_key"],
-                        "user": user_key,
-                        "reply": f"[ERROR] {e}",
-                        "usage": {},
-                    })
+                if args.viking:
+                    try:
+                        viking_ingest(msg)
+                        print(f"    -> [viking] saved", file=sys.stderr)
+                        results.append({
+                            "sample_id": sample_id,
+                            "session": meta["session_key"],
+                            "user": user_key,
+                            "reply": "[viking] saved",
+                            "usage": {},
+                        })
+                    except Exception as e:
+                        print(f"    -> [ERROR] {e}", file=sys.stderr)
+                        results.append({
+                            "sample_id": sample_id,
+                            "session": meta["session_key"],
+                            "user": user_key,
+                            "reply": f"[ERROR] {e}",
+                            "usage": {},
+                        })
+                else:
+                    try:
+                        reply, usage = send_message(args.base_url, args.token, user_key, msg)
+                        print(f"    -> {reply[:80]}{'...' if len(reply) > 80 else ''}", file=sys.stderr)
+                        results.append({
+                            "sample_id": sample_id,
+                            "session": meta["session_key"],
+                            "user": user_key,
+                            "reply": reply,
+                            "usage": usage,
+                        })
+                    except Exception as e:
+                        print(f"    -> [ERROR] {e}", file=sys.stderr)
+                        results.append({
+                            "sample_id": sample_id,
+                            "session": meta["session_key"],
+                            "user": user_key,
+                            "reply": f"[ERROR] {e}",
+                            "usage": {},
+                        })
 
-                if session_id is None:
-                    session_id = get_session_id(user_key)
-                if session_id:
-                    reset_session(session_id)
+                    if session_id is None:
+                        session_id = get_session_id(user_key)
+                    if session_id:
+                        reset_session(session_id)
 
         if args.output:
             with open(args.output, "w", encoding="utf-8") as f:
@@ -348,93 +397,120 @@ def run_ingest(
 # QA: run QA questions and compare with expected answers
 # ---------------------------------------------------------------------------
 
+async def run_sample_qa(
+    item: dict,
+    sample_idx: int,
+    args: argparse.Namespace,
+    semaphore: asyncio.Semaphore,
+) -> tuple[list[dict], dict]:
+    """Process QA for a single sample. Returns (records, sample_usage)."""
+    sample_id = item["sample_id"]
+    user_key = args.user or f"eval-{sample_idx}"
+    qas = [q for q in item.get("qa", []) if str(q.get("category", "")) != "5"]
+    if args.count is not None:
+        qas = qas[:args.count]
+
+    jsonl_path = f"{args.output}.{sample_idx}.jsonl" if args.output else None
+
+    sample_usage = {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
+    records = []
+    session_id = None
+
+    async with semaphore:
+        print(f"\n=== Sample {sample_id} [{sample_idx}] (user={user_key}) ===", file=sys.stderr)
+        print(f"    Running {len(qas)} QA question(s)...", file=sys.stderr)
+
+        jsonl_file = open(jsonl_path, "w", encoding="utf-8") if jsonl_path else None
+        try:
+            for qi, qa in enumerate(qas, start=1):
+                question = qa["question"]
+                expected = str(qa["answer"])
+                category = qa.get("category", "")
+                evidence = qa.get("evidence", [])
+
+                print(f"  [{sample_idx}] Q{qi}/{len(qas)}: {question[:60]}{'...' if len(question) > 60 else ''}", file=sys.stderr)
+
+                try:
+                    response, usage = await asyncio.to_thread(
+                        send_message_with_retry,
+                        args.base_url, args.token, user_key, question,
+                    )
+                    print(f"  [{sample_idx}]   A: {response[:60]}{'...' if len(response) > 60 else ''}", file=sys.stderr)
+                    print(f"  [{sample_idx}]   tokens: in={usage.get('input_tokens',0)} out={usage.get('output_tokens',0)} total={usage.get('total_tokens',0)}", file=sys.stderr)
+                    for k in sample_usage:
+                        sample_usage[k] += usage.get(k, 0)
+                except Exception as e:
+                    response = f"[ERROR] {e}"
+                    usage = {}
+                    print(f"  [{sample_idx}]   A: {response}", file=sys.stderr)
+
+                if session_id is None:
+                    session_id = get_session_id(user_key)
+                if session_id:
+                    reset_session(session_id)
+
+                record = {
+                    "sample_id": sample_id,
+                    "sample_idx": sample_idx,
+                    "qi": qi,
+                    "question": question,
+                    "expected": expected,
+                    "response": response,
+                    "category": category,
+                    "evidence": evidence,
+                    "usage": usage,
+                }
+                records.append(record)
+
+                if jsonl_file:
+                    jsonl_file.write(json.dumps(record, ensure_ascii=False) + "\n")
+                    jsonl_file.flush()
+
+        finally:
+            if jsonl_file:
+                jsonl_file.close()
+                print(f"    [{sample_idx}] written to {jsonl_path}", file=sys.stderr)
+
+    return records, sample_usage
+
+
 def run_qa(
     args: argparse.Namespace,
 ) -> None:
-    """QA only: send questions and get responses. No ingestion.
-
-    Requires --user to target a user that already has context from a prior ingest run.
-    """
+    """QA only: send questions and get responses. No ingestion."""
     if not args.input.endswith(".json"):
         print("Error: QA mode only works with LoCoMo JSON files", file=sys.stderr)
         sys.exit(1)
 
     samples = load_locomo_data(args.input, args.sample)
-    user_key = args.user or "eval-1"
-    print(f"    user: {user_key}", file=sys.stderr)
+    parallel = min(args.parallel, 10)
+    print(f"    user: {args.user or 'eval-{sample_idx}'}", file=sys.stderr)
+    print(f"    parallel: {parallel}", file=sys.stderr)
 
-    all_results = []
-    session_id = None
+    async def _run():
+        semaphore = asyncio.Semaphore(parallel)
+        tasks = [
+            run_sample_qa(item, idx + 1, args, semaphore)
+            for idx, item in enumerate(samples)
+        ]
+        return await asyncio.gather(*tasks)
+
+    results_list = asyncio.run(_run())
+
     total_usage = {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
-
-    for item in samples:
-        sample_id = item["sample_id"]
-        qas = item.get("qa", [])
-        if args.count is not None:
-            qas = qas[:args.count]
-
-        print(f"\n=== Sample {sample_id} (user={user_key}) ===", file=sys.stderr)
-        print(f"    Running {len(qas)} QA question(s)...", file=sys.stderr)
-
-        for qi, qa in enumerate(qas, start=1):
-            question = qa["question"]
-            expected = str(qa["answer"])
-            category = qa.get("category", "")
-            evidence = qa.get("evidence", [])
-
-            print(f"  Q{qi}/{len(qas)}: {question[:60]}{'...' if len(question) > 60 else ''}", file=sys.stderr)
-
-            try:
-                response, usage = send_message(args.base_url, args.token, user_key, question)
-                print(f"    A: {response[:60]}{'...' if len(response) > 60 else ''}", file=sys.stderr)
-                print(f"    tokens: in={usage.get('input_tokens',0)} out={usage.get('output_tokens',0)} total={usage.get('total_tokens',0)}", file=sys.stderr)
-                for k in total_usage:
-                    total_usage[k] += usage.get(k, 0)
-            except Exception as e:
-                response = f"[ERROR] {e}"
-                usage = {}
-                print(f"    A: {response}", file=sys.stderr)
-
-            if session_id is None:
-                session_id = get_session_id(user_key)
-            if session_id:
-                reset_session(session_id)
-
-            all_results.append({
-                "sample_id": sample_id,
-                "qi": qi,
-                "question": question,
-                "expected": expected,
-                "response": response,
-                "category": category,
-                "evidence": evidence,
-                "usage": usage,
-            })
+    for _, sample_usage in results_list:
+        for k in total_usage:
+            total_usage[k] += sample_usage[k]
 
     print(f"\n    total tokens: in={total_usage['input_tokens']} out={total_usage['output_tokens']} total={total_usage['total_tokens']}", file=sys.stderr)
 
-    # Write output
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
-            for r in all_results:
-                u = r.get("usage", {})
-                f.write(f"=== [{r['sample_id']}] Q{r['qi']} Category {r['category']} ===\n")
-                f.write(f"[question] {r['question']}\n")
-                f.write(f"[expected] {r['expected']}\n")
-                f.write(f"[response] {r['response']}\n")
-                f.write(f"[evidence] {', '.join(r['evidence'])}\n")
-                f.write(f"[tokens] in={u.get('input_tokens',0)} out={u.get('output_tokens',0)} total={u.get('total_tokens',0)}\n")
-                f.write("\n")
-            f.write(f"=== TOTAL USAGE ===\n")
+            f.write("=== TOTAL USAGE ===\n")
             f.write(f"input_tokens: {total_usage['input_tokens']}\n")
             f.write(f"output_tokens: {total_usage['output_tokens']}\n")
             f.write(f"total_tokens: {total_usage['total_tokens']}\n")
-        print(f"QA results written to {args.output}", file=sys.stderr)
-
-        json_path = args.output + ".json"
-        with open(json_path, "w", encoding="utf-8") as f:
-            json.dump({"results": all_results, "total_usage": total_usage}, f, indent=2, ensure_ascii=False)
-        print(f"QA results (JSON) written to {json_path}", file=sys.stderr)
+        print(f"Summary written to {args.output}", file=sys.stderr)
     else:
         print("\nDone (no output file requested).", file=sys.stderr)
 
@@ -498,9 +574,22 @@ def main():
         default=None,
         help="QA mode: user UUID from a prior ingest run to target.",
     )
+    parser.add_argument(
+        "-p", "--parallel",
+        type=int,
+        default=1,
+        metavar="N",
+        help="QA mode: number of samples to process concurrently (max 10, default 1).",
+    )
+    parser.add_argument(
+        "--viking",
+        action="store_true",
+        default=False,
+        help="Ingest mode: save to OpenViking via `ov add-memory` instead of OpenClaw.",
+    )
     args = parser.parse_args()
 
-    if not args.token:
+    if not args.token and not getattr(args, "viking", False):
         print("Error: --token or OPENCLAW_GATEWAY_TOKEN env var is required", file=sys.stderr)
         sys.exit(1)
 
