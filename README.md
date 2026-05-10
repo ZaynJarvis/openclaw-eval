@@ -49,7 +49,7 @@ locomo10.json  ->  list of samples
 
 ### `ingest` - Load conversations into openclaw
 
-Sends conversation sessions to openclaw to build up memory/context. All sessions within a sample share one user UUID so context accumulates.
+Sends conversation sessions to openclaw to build up memory/context. All sessions within a sample share one user key so context accumulates. By default, each LoCoMo sample uses an isolated key like `eval-conv-26`; pass `--user` to override it.
 
 ```bash
 # Ingest specific sample, sessions 1-4
@@ -62,11 +62,11 @@ uv run python eval.py ingest ./locomo10.json --sample 0 --sessions 1-4 --output 
 uv run python eval.py ingest example.txt --output output.txt
 ```
 
-Ingest prints the user UUID for each sample:
+Ingest prints the user key for each sample:
 
 ```
 === Sample conv-26 ===
-    user: f5d94f68-24aa-4bcc-a667-9ab11bf5edab
+    user: eval-conv-26
     4 session(s) to ingest
 ```
 
@@ -87,14 +87,14 @@ https://example.com/image.jpg: a photo of a dog walking past a wall
 
 ### `qa` - Run QA evaluation
 
-Sends QA questions to openclaw and records responses alongside expected answers. **No ingestion** - requires `--user` UUID from a prior ingest run.
+Sends QA questions to openclaw and records responses alongside expected answers. **No ingestion** - uses the same per-sample default user key as ingest, or pass `--user` if ingest used an explicit override.
 
 ```bash
-# Run all QAs for sample 0 using user from ingest
-uv run python eval.py qa ./locomo10.json --sample 0 --user f5d94f68-... --output qa_results.txt
+# Run all QAs for sample 0
+uv run python eval.py qa ./locomo10.json --sample 0 --output qa_results.txt
 
 # Run first 10 QAs only
-uv run python eval.py qa ./locomo10.json --sample 0 --user f5d94f68-... --count 10 --output qa_results.txt
+uv run python eval.py qa ./locomo10.json --sample 0 --count 10 --output qa_results.txt
 ```
 
 Output format:
@@ -110,11 +110,11 @@ Output format:
 ## Typical Workflow
 
 ```bash
-# Step 1: ingest conversations (note the user UUID printed)
+# Step 1: ingest conversations
 uv run python eval.py ingest ./locomo10.json --sample 0 --sessions 1-4
 
-# Step 2: run QA using that user UUID
-uv run python eval.py qa ./locomo10.json --sample 0 --user <UUID> --output qa_results.txt
+# Step 2: run QA using the same default sample user key
+uv run python eval.py qa ./locomo10.json --sample 0 --output qa_results.txt
 ```
 
 ## CLI Options
@@ -129,5 +129,5 @@ uv run python eval.py qa ./locomo10.json --sample 0 --user <UUID> --output qa_re
 | `--sample` | all | LoCoMo: sample index (0-based) |
 | `--sessions` | all | Ingest: session range, e.g. `1-4` or `3` |
 | `--tail` | `[]` | Ingest: tail message appended per session |
-| `--user` | none | QA: user UUID from a prior ingest run (required) |
+| `--user` | per-sample key | Override OpenClaw user key for ingest or QA |
 | `--count` | all | QA: number of questions to run |

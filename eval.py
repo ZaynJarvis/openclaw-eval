@@ -110,6 +110,11 @@ def load_locomo_data(
     return data
 
 
+def default_sample_user(sample_id: str) -> str:
+    """Return the default isolated OpenClaw user key for one LoCoMo sample."""
+    return f"eval-{sample_id}"
+
+
 def build_session_messages(
     item: dict,
     session_range: tuple[int, int] | None = None,
@@ -275,7 +280,7 @@ def run_ingest(
 
         for item in samples:
             sample_id = item["sample_id"]
-            user_key = args.user or "eval-1"
+            user_key = args.user or default_sample_user(sample_id)
             sessions = build_session_messages(item, session_range, tail=args.tail)
 
             print(f"\n=== Sample {sample_id} ===", file=sys.stderr)
@@ -405,7 +410,7 @@ async def run_sample_qa(
 ) -> tuple[list[dict], dict]:
     """Process QA for a single sample. Returns (records, sample_usage)."""
     sample_id = item["sample_id"]
-    user_key = args.user or f"eval-{sample_idx}"
+    user_key = args.user or default_sample_user(sample_id)
     qas = [q for q in item.get("qa", []) if str(q.get("category", "")) != "5"]
     if args.count is not None:
         qas = qas[:args.count]
@@ -484,7 +489,7 @@ def run_qa(
 
     samples = load_locomo_data(args.input, args.sample)
     parallel = min(args.parallel, 10)
-    print(f"    user: {args.user or 'eval-{sample_idx}'}", file=sys.stderr)
+    print(f"    user: {args.user or 'per-sample default'}", file=sys.stderr)
     print(f"    parallel: {parallel}", file=sys.stderr)
 
     async def _run():
@@ -572,7 +577,7 @@ def main():
     parser.add_argument(
         "--user",
         default=None,
-        help="QA mode: user UUID from a prior ingest run to target.",
+        help="Override OpenClaw user key for ingest or QA. Default: per-sample key.",
     )
     parser.add_argument(
         "-p", "--parallel",
