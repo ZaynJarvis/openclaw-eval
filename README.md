@@ -80,7 +80,7 @@ Caroline: Hey Mel! Good to see you!
 Melanie: Hey Caroline! What's up?
 
 Caroline: The transgender stories were so inspiring!
-https://example.com/image.jpg: a photo of a dog walking past a wall
+[shared image: a photo of a dog walking past a wall]
 
 []
 ```

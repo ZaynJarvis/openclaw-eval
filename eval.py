@@ -73,23 +73,16 @@ def format_locomo_message(msg: dict) -> str:
 
     Output format:
         Speaker: text here
-        image_url: caption
+        [shared image: caption]
     """
     speaker = msg.get("speaker", "unknown")
     text = msg.get("text", "")
     line = f"{speaker}: {text}"
 
-    img_urls = msg.get("img_url", [])
-    if isinstance(img_urls, str):
-        img_urls = [img_urls]
     blip = msg.get("blip_caption", "")
 
-    if img_urls:
-        for url in img_urls:
-            caption = f": {blip}" if blip else ""
-            line += f"\n{url}{caption}"
-    elif blip:
-        line += f"\n({blip})"
+    if blip:
+        line += f"\n[shared image: {blip}]"
 
     return line
 

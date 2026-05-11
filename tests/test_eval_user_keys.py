@@ -30,6 +30,39 @@ def locomo_sample(sample_id: str) -> dict:
 
 
 class EvalUserKeyTests(unittest.TestCase):
+    def test_locomo_message_uses_caption_without_url_or_query(self):
+        formatted = eval_module.format_locomo_message(
+            {
+                "speaker": "Caroline",
+                "text": "The transgender stories were so inspiring!",
+                "img_url": ["https://i.redd.it/l7hozpetnhlb1.jpg"],
+                "blip_caption": "a photo of a dog walking past a wall with a painting of a woman",
+                "query": "transgender stories poster",
+            }
+        )
+
+        self.assertEqual(
+            formatted,
+            "Caroline: The transgender stories were so inspiring!\n"
+            "[shared image: a photo of a dog walking past a wall with a painting of a woman]",
+        )
+        self.assertNotIn("https://", formatted)
+        self.assertNotIn("transgender stories poster", formatted)
+
+    def test_locomo_message_keeps_caption_when_url_is_absent(self):
+        formatted = eval_module.format_locomo_message(
+            {
+                "speaker": "Melanie",
+                "text": "Look at this.",
+                "blip_caption": "a painting on a brick wall",
+            }
+        )
+
+        self.assertEqual(
+            formatted,
+            "Melanie: Look at this.\n[shared image: a painting on a brick wall]",
+        )
+
     def test_json_ingest_defaults_to_one_user_per_sample(self):
         args = argparse.Namespace(
             input="locomo.json",
